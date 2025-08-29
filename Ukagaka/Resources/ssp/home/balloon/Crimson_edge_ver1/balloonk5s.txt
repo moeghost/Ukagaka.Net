@@ -1,0 +1,3 @@
+windowposition.x,center
+windowposition.y,-300
+

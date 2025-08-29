@@ -1,0 +1,11 @@
+origin.y,7
+origin.x,7
+validrect.bottom,-80
+validrect.right,-10
+validrect.left,7
+validrect.top,7
+arrow0.x,-12
+arrow0.y,5
+arrow1.x,-12
+arrow1.y,-19
+wordwrappoint.x,-20

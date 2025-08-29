@@ -1,0 +1,5 @@
+charset,Shift_JIS
+type,balloon
+name,Seraphic Ribbon
+directory,SeRi
+refresh,1

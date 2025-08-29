@@ -1,0 +1,4 @@
+charset,Sift_JIS
+type,balloon
+name,SRWZ
+directory,SRWZ

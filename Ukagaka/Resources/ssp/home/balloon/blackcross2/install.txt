@@ -1,0 +1,5 @@
+type,balloon
+name,Black cross 2
+directory,blackcross2
+
+refresh,1

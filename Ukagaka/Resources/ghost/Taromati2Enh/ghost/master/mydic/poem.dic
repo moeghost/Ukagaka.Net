@@ -1,0 +1,209 @@
+///////////////////////////////////////////
+////////// 诗词阅读辞书
+////////// written by forjane 2009.10.27
+///////////////////////////////////////////
+
+
+OnPoemMenu
+{
+    LoadPoemTitle;
+	_txt = "\0\s[26]想要怎样阅读诗歌呢？\n\n";
+	_txt += "\_q\q[◇诗歌列表,OnPoemList]\n[150]诗歌查询：\n\q[◇按作者,OnSearchPoem,0]      \q[◇按标题,OnSearchPoem,1]      \q[◇按内容,OnSearchPoem,2]";
+	_txt += "\n\n\n\q[◇返回上一层,OnOpenMenu,1]\n\q[◇终了,OnPoemEnd]"
+	_txt;
+}
+
+OnPoemList
+{
+	_txt = "\0\s[26]\_q\b2\![set,autoscroll,disable]";
+	_blank = "　　　　　　　　　　　　　　　";
+	_title = "";
+	_line = 0;
+	for _i=0; _i<poemnum; _i++ {
+		_temp = poemtitle[_i];
+		_title = _temp[1,':'];
+		_len = STRLEN(_title);
+		if _i > 0 && _len > 8 {
+			_line = 1;
+			_txt += '\n'; 
+		}
+		elseif _i > 0 && _line % 2 == 0 {
+			_txt +='\n';
+		}
+		_line ++;
+		_txt += '\q[◇' + _title + ',OnPoemTitle,' + _i + ',OnPoemList]' + SUBSTR(_blank, 0, 8 - _len);
+	}
+	_txt += "\n[150]\n\n共%(poemnum)首诗";
+	_txt += "\n[150]\q[◇返回上一层,OnPoemMenu]\n\q[◇终了,OnPoemEnd]\x\e"
+	_txt;
+}
+
+
+LoadPoemTitle
+{
+	_line = 0;
+	_poemfile = "mydata\poem.txt";
+	poemtitle = IARRAY;
+	poemnum = 0;
+	_buff = "";
+	if FOPEN(_poemfile,"r") {
+		while (_buff = FREAD(_poemfile)) != -1 {
+			_line ++;
+			_buff = _buff[0,'//'];
+			if '[title]' _in_ _buff {
+				poemtitle[poemnum] = _line + ':' + FREAD(_poemfile);
+				poemnum ++;
+				_line ++;
+			}
+		}
+	}	
+	FCLOSE(_poemfile);
+}
+
+OnPoemTitle
+{
+	_txt ="\0\b[2]";
+	_poemtitle = poemtitle[reference0];
+	_line = TOINT(_poemtitle[0,':']);
+	_poemfile = "mydata\poem.txt";
+	_buff = "";
+	_poem = "";
+	_poemtips = "";
+	if FOPEN(_poemfile,"r") {
+		for _i = 0; _i <= _line; _i ++ {
+			_buff = FREAD(_poemfile);
+		}
+		while '[end]' !_in_ _buff && '[tips]' !_in_ _buff {
+			_buff = FREAD(_poemfile);
+			_poem += _buff + '\n';
+		}
+		if '[tips]' _in_ _buff {
+			while '[end]' !_in_ _buff {
+				_buff = FREAD(_poemfile);
+				_poemtips += _buff + '\n';
+			}
+		}	
+	}	
+	FCLOSE(_poemfile);
+
+	_txt += '《' + _poemtitle[1,':'] + '》\n[150]\w9';
+	if _poemtitle[2,':'] != "" {
+		_txt += '作者：' + _poemtitle[2,':'] + '\n[150]\w9';
+	}
+	_txt += _poem + "\_q\n\n" + _poemtips;
+	_txt += "\n\n\n\q[◇返回上一层,%(reference1)]\n\q[◇终了,OnPoemEnd]\x\e";
+	_txt;
+}
+
+
+OnSearchPoem
+{
+	poemsearchmode = reference0;
+	_txt = "请输入要查询的关键词……\![open,inputbox,OnPoemInputFinish,0,%(poemkeywords)]"
+	_txt;
+}
+
+OnPoemInputFinish
+{
+	poemkeywords = reference0;
+	if poemsearchmode == 2 {
+		OnPoemSearchDetail;
+	}
+	else {
+		OnPoemSearch;
+	}
+}
+
+OnPoemSearchDetail
+{
+	_txt = "\0\s[26]\_q\b2";
+	_blank = "　　　　　　　　　　　　　　　";
+	_line = 0;
+	_title = "";
+	_count = 0;
+
+	_flag = 0;
+	_poemfile = "mydata\poem.txt";
+	_buff = "";
+	_n = -1;
+	if FOPEN(_poemfile,"r") {
+		while (_buff = FREAD(_poemfile)) != -1 {
+			_buff = _buff[0,'//'];
+			if '[title]' _in_ _buff {
+				_buff = FREAD(_poemfile);
+				_buff = FREAD(_poemfile);
+				_flag = 1;
+				_n ++;
+			}
+			if '[tips]' _in_ _buff || '[end]' _in_ _buff {
+				_flag = 0;
+			}
+			if _flag == 1 && poemkeywords _in_ _buff {
+				_flag = 0;
+				_temp = poemtitle[_n];
+				_count ++;
+				_title = _temp[1,':'];
+				_len = STRLEN(_title);
+	
+				if _n > 0 && _len > 8 {
+					_line = 1;
+					_txt += '\n'; 
+				}
+				elseif _n > 0 && _line % 2 == 0 {
+					_txt +='\n';
+				}
+				_line ++;
+				_txt += '\q[◇' + _title + ',OnPoemTitle,' + _n + ',OnPoemSearchDetail]' + SUBSTR(_blank, 0, 8 - _len);
+			}			
+		}
+	}	
+	_txt += "\n[150]\n\n共找到%(_count)首符合条件的诗喔～";
+	_txt += "\n[150]\n\q[◇返回上一层,OnPoemMenu]\n\q[◇终了,OnPoemEnd]\x\e"
+	_txt;
+	FCLOSE(_poemfile);
+}
+
+OnPoemSearch
+{
+	_txt = "\0\s[26]\_q\b2";
+	_blank = "　　　　　　　　　　　　　　　";
+	_line = 0;
+	_title = "";
+	_count = 0;
+	for _i = 0; _i < poemnum; _i++ {
+		_temp = poemtitle[_i];
+		if poemsearchmode == 0 && _temp[2,':'] == poemkeywords /
+		|| poemsearchmode == 1 && poemkeywords _in_ _temp[1,':'] {
+			_count ++;
+			_title = _temp[1,':'];
+			_len = STRLEN(_title);
+
+			if _i > 0 && _len > 8 {
+				_line = 1;
+				_txt += '\n'; 
+			}
+			elseif _i > 0 && _line % 2 == 0 {
+				_txt +='\n';
+			}
+			_line ++;
+			_txt += '\q[◇' + _title + ',OnPoemTitle,' + _i + ',OnPoemSearch]' + SUBSTR(_blank, 0, 8 - _len);
+		}
+	}
+	_txt += "\n[150]\n\n共找到%(_count)首符合条件的诗喔～";
+	_txt += "\n[150]\n\q[◇返回上一层,OnPoemMenu]\n\q[◇终了,OnPoemEnd]\x\e"
+	_txt;
+}
+
+CleanVarOfPoem
+{
+	ERASEVAR("poemtitle");
+	ERASEVAR("poemnum");
+	ERASEVAR("poemkeywords");
+	ERASEVAR("poemsearchmode");
+}
+
+OnPoemEnd
+{
+	CleanVarOfPoem;
+	"\0\s[0]好的，那就这样吧。\e"
+}

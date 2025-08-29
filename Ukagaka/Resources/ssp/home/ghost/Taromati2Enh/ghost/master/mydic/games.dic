@@ -1,0 +1,655 @@
+///////////////////////////////////////////
+////////// 游戏辞书
+////////// 
+///////////////////////////////////////////
+
+
+
+
+//OX游戏，by Pygmalion
+//-------------------------------------------
+
+OnPlayOX
+{
+	arrOX = IARRAY
+	for _i = 0; _i < 9; _i++ {
+		arrOX = (arrOX, 0)
+	}
+	"\0\s[40]来吧!\w9我可不会输的喔！\w9\w9\c"
+	--
+	PlayOXshow(0)
+}
+
+PlayOXshow
+{
+	_tempstr = ""
+	for _i = 0; _i < 3; _i++ {
+		for _j = 0; _j < 3; _j++ {
+			_temp = _i * 3 + _j
+			if arrOX[_temp] == -1
+				_tempstr = _tempstr + "Ｘ"
+			elseif arrOX[_temp] == 1
+				_tempstr = _tempstr + "○"
+			elseif _argv[0] == 0
+				_tempstr = _tempstr + "\q[　,PlayOXrun("+_temp+")]"
+			else
+				_tempstr = _tempstr + "　"
+			if _j != 2
+				_tempstr = _tempstr + "│"
+		}
+		_tempstr = _tempstr + "\n[90]"
+		if _i != 2
+		{
+			_tempstr = _tempstr + "─┼─┼─"
+		}
+		_tempstr = _tempstr + "\n[90]"
+	}
+	switch _argv[0]
+	{
+		"\_q\0\s[40]请%(username)走棋\n%(_tempstr)\n\q[◇不想玩了,OnOpenMenu,2]\e"
+		{
+			"\_q\0\s[34]\n%(_tempstr)\n[half]\_q橘花输了。\n\w9\w9\1\s[13]危险的物品收起来\w8%(username)只是在跟你玩而已\w9\w9\0\s[0]\c喔……\w9\w9\n[150]\q[◇再来一盘,OnPlayOX]\n\q[◇游戏结束,OnOpenMenu,2]\e"
+			"\_q\0\s[7]\n%(_tempstr)\n[half]\_q\w9\w9%(username)……该不是作弊了吧……\w8\w8\w8\n[150]\q[◇再来一盘,OnPlayOX]\n\q[◇游戏结束,OnOpenMenu,2]\e"
+			"\_q\0\s[35]\n%(_tempstr)\n[half]\_q\n橘花不会气馁的！\w9\w9\s[41]\w9\w9\n[150]\q[◇再来一盘,OnPlayOX]\n\q[◇游戏结束,OnOpenMenu,2]\e"
+		}
+		{
+			"\_q\0\s[6]\n%(_tempstr)\n[half]\_q\w9\w9平手,还玩吗？\n[150]\q[◇再来一盘,OnPlayOX]\n\q[◇游戏结束,OnOpenMenu,2]\e"
+			"\_q\0\s[23]\n%(_tempstr)\n[half]\_q\w9\w9和局,接下来以实力拼胜负吧……\n[150]\q[◇再来一盘,OnPlayOX]\n\q[◇游戏结束,OnOpenMenu,2]\e"
+			"\_q\0\s[3]\n%(_tempstr)\n[half]\_q\w9\w9不相上下呢……%(username)果然赢不了橘花。\n[150]\q[◇再来一盘,OnPlayOX]\n\q[◇游戏结束,OnOpenMenu,2]\e"
+		}
+		{
+			"\_q\0\s[5]\n%(_tempstr)\n[half]\_q\w9太好了,橘花赢了！博弈论的大胜利呢！\n[150]\q[◇再来一盘,OnPlayOX]\n\q[◇游戏结束,OnOpenMenu,2]\e"
+			"\_q\0\s[8]\n%(_tempstr)\n[half]\_q\w9\w9橘花赢了,%(username)的实力只有这样而已吗？\n[150]\q[◇再来一盘,OnPlayOX]\n\q[◇游戏结束,OnOpenMenu,2]\e"
+		}
+	}
+}
+
+Select.PlayOXrun
+{
+	arrOX[_argv[0]] = -1
+	if PlayOXover(_argv[0]) != 1
+	{
+		_tempid = -1
+		_rightmax = -24
+		_tempright = 0
+		for _i = 0; _i < 9; _i++ {
+			if arrOX[_i] == 0
+			{
+				arrOX[_i] = 1
+				if PlayOXover(_i) == 1
+				{
+					arrOX[_i] = 0
+					_tempid = _i
+					break
+				}
+				_rightmin = 24
+				for _j = 0; _j < 9; _j++ {
+					if arrOX[_j] == 0
+					{
+						arrOX[_j] = -1
+						_tempright = 0
+						_temparry = IARRAY
+						_temparry = (_temparry,arrOX[0] + arrOX[1] + arrOX[2])
+						_temparry = (_temparry,arrOX[3] + arrOX[4] + arrOX[5])
+						_temparry = (_temparry,arrOX[6] + arrOX[7] + arrOX[8])
+						_temparry = (_temparry,arrOX[0] + arrOX[3] + arrOX[6])
+						_temparry = (_temparry,arrOX[1] + arrOX[4] + arrOX[7])
+						_temparry = (_temparry,arrOX[2] + arrOX[5] + arrOX[8])
+						_temparry = (_temparry,arrOX[0] + arrOX[4] + arrOX[8])
+						_temparry = (_temparry,arrOX[2] + arrOX[4] + arrOX[6])
+						_oxnum = 0
+						foreach _temparry; _k {
+							_tempright += _k
+							if _k == -3
+								_oxnum = 24
+							if _k == -2
+								_oxnum++
+							if _k == 2
+								_oxnum--
+						}
+						if _oxnum > 1
+							_tempright = -24
+						if _tempright < _rightmin
+						{
+							_rightmin = _tempright
+						}
+						arrOX[_j] = 0
+					}
+				}
+				if _rightmin > _rightmax
+				{
+					_rightmax = _rightmin
+					_tempid = _i
+				}
+				arrOX[_i] = 0
+			}
+		}
+		if _tempid == -1
+			PlayOXshow(2)
+		else
+		{
+			arrOX[_tempid] = 1
+			if PlayOXover(_tempid) == 1
+			{
+				PlayOXshow(3)
+			}
+			else
+			{
+				PlayOXshow(0)
+			}
+		}
+	}
+	else
+		PlayOXshow(1)
+}
+
+PlayOXover
+{
+	_nowrow = _argv[0] / 3
+	_nowcolumn = _argv[0] % 3
+	if arrOX[_nowrow*3] == arrOX[_nowrow*3+1] && arrOX[_nowrow*3+1] == arrOX[_nowrow*3+2] && arrOX[_nowrow*3] != 0 /
+	|| arrOX[_nowcolumn] == arrOX[3+_nowcolumn] && arrOX[3+_nowcolumn] == arrOX[6+_nowcolumn] && arrOX[_nowcolumn] != 0 /
+	|| arrOX[0] == arrOX[4] && arrOX[4] == arrOX[8] && arrOX[8] != 0 /
+	|| arrOX[2] == arrOX[4] && arrOX[4] == arrOX[6] && arrOX[6] != 0
+	{
+		1
+	}
+	else
+		0
+}
+
+
+
+
+// 扑克游戏
+//--------------------------------------------------------------------------
+
+Poker.Init
+{
+	poker = IARRAY;
+	_poker0 =("0,黑桃,♠,A","1,黑桃,♠,2","2,黑桃,♠,3","3,黑桃,♠,4","4,黑桃,♠,5","5,黑桃,♠,6","6,黑桃,♠,7","7,黑桃,♠,8","8,黑桃,♠,9","9,黑桃,♠,10","10,黑桃,♠,J","11,黑桃,♠,Q","12,黑桃,♠,K",/
+			"13,红心,♥,A","14,红心,♥,2","15,红心,♥,3","16,红心,♥,4","17,红心,♥,5","18,红心,♥,6","19,红心,♥,7","20,红心,♥,8","21,红心,♥,9","22,红心,♥,10","23,红心,♥,J","24,红心,♥,Q","25,红心,♥,K",/
+			"26,梅花,♣,A","27,梅花,♣,2","28,梅花,♣,3","29,梅花,♣,4","30,梅花,♣,5","31,梅花,♣,6","32,梅花,♣,7","33,梅花,♣,8","34,梅花,♣,9","35,梅花,♣,10","36,梅花,♣,J","37,梅花,♣,Q","38,梅花,♣,K",/
+			"39,方块,♦,A","40,方块,♦,2","41,方块,♦,3","42,方块,♦,4","43,方块,♦,5","44,方块,♦,6","45,方块,♦,7","46,方块,♦,8","47,方块,♦,9","48,方块,♦,10","49,方块,♦,J","50,方块,♦,Q","51,方块,♦,K",/
+			"52,鬼牌,,小王","53,鬼牌,,大王");
+	_begin = 0;
+	_end = 0;
+	case _argv[0] {
+		when "52" {
+			_end = 52;
+		}
+		when "54" {
+			_end = 54;
+		}
+		when "黑桃" {
+			_end = 13;
+		}
+		when "红心" {
+			_begin = 13;
+			_end = 26;
+		}
+		when "梅花" {
+			_begin = 26;
+			_end = 39;
+		}
+		when "方块" {
+			_begin = 39;
+			_end = 52;
+		}
+	}
+	case _argv[1] {
+		when "rand","random" {
+			for _i = 0; _i < _end - _begin; _i ++ {
+				_rand = RAND(_end - _begin - _i) + _begin;
+				poker[_i] = _poker0[_rand];
+				_poker0[_rand] = IARRAY;
+			}
+		}
+		others {
+			for _i = 0; _i < _end - _begin; _i ++ {
+				poker[_i] = _poker0[_i + _begin];
+			}
+		}
+	}
+}
+
+Poker.Show
+{
+	_poker = _argv[0];
+	_mode = _argv[1];
+	_txt = "";
+	case _mode {
+		when 0,1,2,3 {
+			_txt = _poker[_mode];
+		}
+		when "s","cs","sc" {
+			_txt = _poker[2] + " " + _poker[3];
+		}
+		others {
+			_txt = _poker[1] + " " + _poker[3];
+		}
+	}
+	if "c" _in_ _mode {
+		_idx = TOINT(_poker[0]);
+		if _idx / 13 == 1 || _idx / 13 == 3 || _idx == 53 {
+			_txt = "\f[color,238,50,95]" + _txt + "\f[color,default]";
+		}
+		else {
+			_txt = "\f[color,32,32,32]" + _txt + "\f[color,default]";
+		}
+	}
+	_txt;
+}
+
+Poker.Clear
+{
+	ERASEVAR("poker");
+}
+
+OnBlackjack0
+{
+	"规则都知道吧"
+	"这个游戏不押赌注就不好玩了，\w9每一局￥50怎样？\w9拿到BlackJack2倍，五龙3倍喔！\w9"
+	"那么，\w9由橘花坐庄，\w9现在开始吧"
+	--
+	"\w9\w9\c"
+	--
+	OnBlackjack;
+}
+
+OnBlackjack
+{
+	Poker.Init("52","random");
+	Blackjack;
+}
+
+OnBlackjackRule
+{
+	_rule = "游戏规则就是一般的21点，\w5A表示1或11点，\w5J、Q和K则表示10点，/ 
+			游戏的目的就是尽量让手中的牌凑到21点，\w5但超过21点就变成爆牌，\w5\s[5]会直接出局喔。 \n/ 
+			\s[0]一开始先由斗和发一张暗牌给我们，\w5这张暗牌一直到游戏结束前都不会被对方看到。 \w5/ 
+			确认过暗牌后先由%(username)决定是否要继续抽牌，\w5一旦决定不抽牌之后也不能再抽喔！ \n/ 
+			如果我们都决定不抽牌就必须互相翻开暗牌计算彼此的点数，\w5\s[5]当然是点数较高又没爆牌的人获胜！ \n/ 
+			\s[0]除了爆牌或不抽牌会结束游戏之外，\w5如果我们其中一人的牌的点数加起来刚好是21点，\w5那就直接获胜了！ \n/ 
+			又或者其中一个人连续抽了五张牌都没有爆牌，\w5则称为五龙，\w5\s[5]一样是直接获胜喔！";
+	_menu = "\n\n\q[◇新游戏,OnBlackjack,0]\n[150]\q[◇返回上一层,OnOpenMenu,2]\n\q[◇终了,OnBlackjackEnd]";
+	_rule + _menu;
+}
+
+Blackjack
+{
+	kikkascard = (2,1,0,0,0,poker[0],poker[1]);
+	yourcard = (2,0,0,0,0,poker[2],poker[3]);
+	BlackjackCal;
+	BlackjackShow;
+}
+
+BlackjackShow
+{
+	_txt = "\_q";
+	_txt += "橘花的牌：(%(kikkascard[3])点)\n";
+	for _i = 0; _i < kikkascard[0]; _i ++ {
+		if kikkascard[1] == 1 && _i == 0 {
+			_txt += "暗牌   ";
+		}
+		else {
+			_txt += "\_l[%(_i * 36)]" + Poker.Show(kikkascard[_i + 5],'cs');
+		}
+	}
+	_txt += "\n[150]你的牌：(%(yourcard[3])点)\n";
+	for _i = 0; _i < yourcard[0]; _i ++ {
+		if yourcard[1] == 1 && _i == 0 {
+			_txt += "暗牌   ";
+		}
+		else {
+			_txt += "\_l[%(_i * 36)]" + Poker.Show(yourcard[_i + 5],'cs');
+		}
+	}
+	_txt += BlackjackJudge;
+	_txt += "\n[150]\q[◇新游戏,OnBlackjack]    \q[◇游戏规则,OnBlackjackRule]\n\q[◇返回上一层,OnOpenMenu,2]\n\q[◇终了,OnBlackjackEnd]";
+	_txt += ShowMoney(120,0);
+	_txt;
+}
+
+BlackjackJudge
+{
+	"\_l[0,77]"
+	--
+	if kikkascard[1] > 0 {
+		if yourcard[2] <= 21 && yourcard[0] == 5 {
+			kikkamoney += 3 * 50;
+			"\0\s[9]五龙！%(username)获胜了。"
+		}
+		elseif yourcard[2] == 21 && yourcard[0] == 2 {
+			kikkamoney += 2 * 50;
+			"\0\s[9]讨厌，%(username)抽到BlackJack获胜了。"
+		}
+		elseif yourcard[2] == 21 && yourcard[4] == 0 || kikkascard[2] == 21 {
+			"\q[◇停手,OnBlackjackStand]"
+		}
+		elseif yourcard[2] > 21 {
+			kikkamoney -= 50;
+			"\0\s[5]%(username)爆牌了呢！"
+		}
+		else {
+			"\q[◇加牌,OnBlackjackAdd]    \q[◇停手,OnBlackjackStand]"
+		}
+	}
+	else {
+		if kikkascard[2] <= 21 && kikkascard[0] == 5 {
+			kikkamoney -= 3 * 50;
+			"\0\s[40]耶！橘花五龙了！！"
+		}
+		elseif kikkascard[2] == 21 && kikkascard[0] == 2 {
+			kikkamoney -= 2 * 50;
+			"\0\s[40]BlackJack！橘花获胜了！"
+		}
+		elseif kikkascard[2] > 21 {
+			kikkamoney += 50;
+			"\0\s[3]555……橘花爆牌了。"
+		}
+		elseif kikkascard[2] == yourcard[2] {
+			"\0\s[5]看来我们的点数都一样大呢！"
+		}
+		elseif kikkascard[2] == 21 {
+			kikkamoney -= 50;
+			"\0\s[41]咦？我刚好21点！"
+		}
+		elseif yourcard[2] == 21 {
+			kikkamoney += 50;
+			"\0\s[7]啊！%(username)刚好21点！"
+		}
+		elseif kikkascard[2] > yourcard[2] {
+			kikkamoney -= 50;
+			"\0\s[20]好像是我的点数比较大呢！"
+		}
+		elseif kikkascard[2] < yourcard[2] {
+			kikkamoney += 50;
+			"\0\s[30]%(username)的点数比较大呢……"
+		}
+	}
+}
+
+BlackjackCal
+{
+	kikkascard[2] = 0;
+	yourcard[2] = 0;
+	kikkascard[4] = 0;
+	yourcard[4] = 0;
+	for _i = kikkascard[0] - 1; _i >= 0; _i -- {
+		_card = kikkascard[_i + 5];
+		case _card[3] {
+			when '2','3','4','5','6','7','8','9','10' {
+				kikkascard[2] += TOINT(_card[3]);
+			}
+			when 'J','Q','K' {
+				kikkascard[2] += 10;
+			}
+			when 'A' {
+				kikkascard[4] ++;
+				kikkascard[2] += 11;
+			}
+		}
+		while kikkascard[2] > 21 && kikkascard[4] > 0 {
+			kikkascard[4] --;
+			kikkascard[2] -= 10;
+		}
+		if _i >= kikkascard[1] {
+			kikkascard[3] = kikkascard[2];
+		}
+	}
+	for _i = yourcard[0] - 1; _i >= 0; _i -- {
+		_card = yourcard[_i + 5];
+		case _card[3] {
+			when '2','3','4','5','6','7','8','9','10' {
+				yourcard[2] += TOINT(_card[3]);
+			}
+			when 'J','Q','K' {
+				yourcard[2] += 10;
+			}
+			when 'A' {
+				yourcard[4] ++;
+				yourcard[2] += 11;
+			}
+		}
+		while yourcard[2] > 21 && yourcard[4] > 0 {
+			yourcard[4] --;
+			yourcard[2] -= 10;
+		}
+		if _i >= yourcard[1] {
+			yourcard[3] = yourcard[2];
+		}
+	}
+}
+
+OnBlackjackAdd
+{
+	yourcard[0] ++;
+	_cnt = yourcard[0];
+	yourcard ,= poker[_cnt + 1];
+	BlackjackCal;
+	BlackjackShow;	
+}
+
+OnBlackjackStand
+{
+	kikkascard[1] = 0;
+	BlackjackCal;
+	while kikkascard[2] < 17 {
+		kikkascard[0] ++;
+		_cnt = kikkascard[0];
+		kikkascard ,= poker[_cnt + 4];
+		BlackjackCal;
+	}
+	BlackjackShow;	
+}
+
+ShowMoney
+{
+	_x = _argv[0];
+	_y = _argv[1];
+
+	"\_l[%(_x),%(_y)]"
+	--
+	ColorText("金钱：￥%(kikkamoney)","bold,color=244,190,0");
+	--
+}
+
+OnBlackjackEnd
+{
+	ERASEVAR("poker");
+	ERASEVAR("kikkascard");
+	ERASEVAR("yourcard");
+
+	"\s[26]不玩了吗？"
+}
+
+
+// 猜拳 by 朔№九尾
+//--------------------------------------------------------------------------
+
+
+OnHandGame
+{
+"\0\s[40]%(username)要跟橘花玩猜拳?\w9\w9...好啊!\w9\w9\c\w9\w9出拳吧!\n\n/
+\q[◇剪刀,ShowHand(0)]\n/
+\q[◇石头,ShowHand(1)]\n/
+\q[◇布,ShowHand(2)]\n\e"
+}
+
+Select.ShowHand
+{
+        _i=RAND(3)
+        "\0\s[0]橘花出.\w8.\w8.\w8."
+        --
+        switch _i
+        {
+                "剪刀\n\w9"
+                "石头\n\w9"
+                "布\n\w9"
+        }
+        --
+        switch (3 + _i - _argv[0])%3
+        {
+                {
+                        "\0\s[33]%(username)跟我一样呢\w9\w9\1\s[11]是%(username)让你的\w9\w9\0\s[26]\n是吗?\w9\w9"
+                        "\0\s[33]%(username)跟我一样呢\w9\w9\1\s[11]是%(username)让你的\w9\w9\0\s[29]\n就算是这样我也很高兴呢\w9\w9"
+                        "\1\s[10]你们真有默契\w9\w9\w9\0\s[1].....哪...哪有\w9\w9只是碰巧的,对不对%(username)\w9\w9"
+                        "\1\平手"
+                }
+                {
+                        "\0\s[5]橘花赢了!好高兴喔~\w9\w9\1\s[12]今天运气不好喔!\0\s[6]\n谢谢你%(username)\w9\w9"
+                        "\1\s[10]....\w8....\w8....\w8...\0\s[40]加油!\w8\w8下一次%(username)会赢我喔!\w8\w8\1\s[11]这是败北宣言吗?\w8\w8\0\s[9]\c\n才不是呢\w9\w9"
+                        "\0\s[41]橘花赢了!\w9\s[41]%(username)要加油喔!\w9\w9\1\s[10]该不会是作...\0\s[32]\c作什麽?\w9\w9\n\1\s[13]\c没...没事\w9\w9"
+                        "\0\%(username)输了\n\1\s[10]展现你的实力给我看吧!\w9\w9\0\q[◇继续玩,P1]\n\q[◇不用了,P2]\e"
+                }
+                {
+                        "\0\s[34]橘花输了\w9\w9\1\s[13]危险的物品收起来\w8%(username)只是在跟你玩而已\w9\w9\0\s[0]\c喔....\w9\w9"
+                        "\1\s[11]%(username)果然很强啊\w9\w9\0\s[1]嗯..\w8..\w8\w8\w8"
+                        "\0\s[26]%(username)很强呢\w9\w9\1\s[12]这才是%(username)的实力\w9\w9\0\s[8]\n是这样吗\w9\w9"
+                        "\0\s[35]橘花不会气馁的\w9\w9\s[41]\w9\w9"
+                }
+        }
+        --
+        "\n\0\s[40]再玩一次吧%(username)\n[150]\q[◇好,P1]\n\q[◇返回上一层,OnOpenMenu,2]\n\q[◇终了,P2]\e"
+}
+
+Select.P1
+{
+"\0\s[0]\w9\w9出拳吧!\n\n/
+\q[◇剪刀,ShowHand(0)]\n/
+\q[◇石头,ShowHand(1)]\n/
+\q[◇布,ShowHand(2)]\n/
+\q[◇不用了,P2]\e"
+}
+
+Select.P2
+{
+"\0\s[26]%(username)不想玩了?\w9\w9\e"
+"\1\s[10]不想玩了\w9 嘎! \w9\w9\e"
+"\0\s[0]游戏结束\w9\e"
+"\1\s[11]游戏结束\w9\e"
+}
+
+
+
+// 猜数字
+//--------------------------------------------------------------------------
+
+OnGuessNumber
+{
+	gn = IARRAY;
+	gn[0] = 0;
+	while (gn[1] = GuessNumberCheck(TOSTR(RAND(10000)))) == 0 {
+	}
+	"\s[0]嗯\w9…\w9…\w9橘花已经想好要猜的数了。\w9那么，\w9"
+	--
+	GuessNumber;
+}
+
+GuessNumberCheck
+{
+	_n = _argv[0];
+	if STRLEN(_n) == 3 {
+		_n = '0' + _n;
+	}
+	_r = _n;
+	if STRLEN(_n) != 4 {
+		_r = 0;
+	}
+	else {
+		for _i = 0; _i < 3; _i ++ {
+			for _j = _i + 1; _j < 4; _j ++ {
+				if SUBSTR(_n,_i,1) == SUBSTR(_n,_j,1) {
+					_r = 0;
+					break;
+				}
+			}
+		}
+	}
+	_r;
+}
+
+GuessNumberShow
+{
+	_txt = "";
+	_n = gn[0];
+	for _i = 2; _i < _n + 2; _i ++ {
+		_tmp = gn[_i];
+		_txt += _tmp[0] + "         " + _tmp[1] + "\n";
+	}
+	if _n > 0 {
+		_txt = "\_q猜数记录    结果\n" + _txt + "\n[150]\_q";
+	}
+	_txt;
+}
+
+GuessNumberCal
+{
+	_n = gn[0] + 1;
+	_a = 0;
+	_b = 0;
+	for _i = 0; _i < 4; _i ++ {
+		if SUBSTR(gn[1],_i,1) == SUBSTR(gn[_n],_i,1) {
+			_a ++;
+		}
+		elseif SUBSTR(gn[_n],_i,1) _in_ SUBSTR(gn[1],0,4) {
+			_b ++;
+		}
+	}
+	_r = _a + 'A' + _b + 'B';
+	_tmp = gn[_n] + ',' + _r;
+	gn[_n] = _tmp;
+	_r;
+}
+
+GuessNumber
+{
+	GuessNumberShow;
+	--
+	"请输入你猜测的四位数：\n\n[150]\q[◇返回上一层,OnOpenMenu,2]\n\q[◇终了,OnGuessNumberEnd]\![open,inputbox,OnGuessNumberInput,0]\x";
+}
+
+OnGuessNumberInput
+{
+	_tmp = 0;
+	_menu = "\_q\n\n[150]\q[◇继续玩,OnGuessNumber]\n[150]\q[◇返回上一层,OnOpenMenu,2]\n\q[◇终了,OnGuessNumberEnd]\_q";
+	if (_tmp = GuessNumberCheck(reference0)) == 0 {
+		"输入的数据无效…\w9…\w9\c"
+		--
+		GuessNumber;
+	}
+	else {
+		gn[0] ++;
+		_n = gn[0] + 1;
+		gn ,= _tmp;
+		if GuessNumberCal == "4A0B" {
+			case gn[0] {
+				when 1 {
+					"\s[2]哇！一猜就中，\w9%(username)和我心有灵犀呢！！\w9\1\s[12]运气而已……\w9\0"
+					--
+					_menu;
+				}
+				when 2,3,4,5,6 {
+					"\s[5]Bingo！只用了%(gn[0])次就猜中了呢，\w9%(username)好厉害！！\w9"
+					--
+					_menu;
+				}
+				others {
+					"\s[5]猜中了！"
+					--
+					_menu;
+				}
+			}
+		}
+		else {
+			GuessNumber;
+		}
+	}
+}
+
+OnGuessNumberEnd
+{
+	ERASEVAR("gn");
+	"\s[0]不玩了吗？";
+}

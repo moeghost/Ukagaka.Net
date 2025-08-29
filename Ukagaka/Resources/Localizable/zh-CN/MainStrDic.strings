@@ -1,0 +1,57 @@
+// 偽林檎　メイン文字列定数
+// #nは表示する前に置き換えられます。
+
+/*
+    環境設定パネル
+*/
+/*
+pref_pseudoai_noisy = "Noisy";
+pref_pseudoai_ordinary = "Ordinary";
+pref_pseudoai_quiet = "Quiet";
+pref_pseudoai_reticent = "Reticent";
+pref_pseudoai_aphasia = "Aphasia";
+*/
+pref.plugin.type.hlsensor = "Headline Sensor";
+pref.plugin.type.shiori = "SHIORI Module";
+pref.plugin.type.makoto = "MAKOTO Module";
+
+/*
+    ゴーストマネージャウインドウ
+*/
+ghostmanager.ghostname.undefined = "(ghost name undefined)";
+ghostmanager.shioritype.none = "(unknown SHIORI subsystem)";
+ghostmanager.makototype.unknown = "(unknown MAKOTO sybsystem)";
+ghostmanager.undeterminated = "(undeterminated)";
+ghostmanager.balloonname.undefined = "(balloon name undefined)";
+ghostmanager.bootandquit.boot = "Materialize";
+ghostmanager.bootandquit.quit = "Close";
+
+/*
+    インストールダイアログ
+*/
+installdialog.doing = "Installing...";
+installdialog.succeeded = "Succeeded.";
+installdialog.failed = "Failed.";
+
+/*
+    VANISHダイアログ
+*/
+vanishdialog.title = "VANISH : #1";
+vanishdialog.message = "Do you really want to delete the ghost \"#1\"?";
+
+/*
+    コンテクストメニュー
+*/
+contextmenu.changeghost = "Change Ghost";
+contextmenu.shell = "Shell";
+contextmenu.balloon = "Balloon";
+contextmenu.networkupdate = "Online Update";
+contextmenu.vanish = "Vanish...";
+contextmenu.hlsensor = "Headline Sensor";
+contextmenu.close = "Close";
+contextmenu.recommended = "Recommended Sites of #1";
+contextmenu.portal = "Portal Sites";
+contextmenu.aboutghost = "About This Ghost...";
+contextmenu.aboutshell = "About This Shell...";
+contextmenu.development = "Interfaces for Development";
+contextmenu.development.reload = "Reload SHIORI/MAKOTO Subsystems";

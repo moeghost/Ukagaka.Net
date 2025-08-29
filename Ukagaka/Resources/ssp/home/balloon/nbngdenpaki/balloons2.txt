@@ -1,0 +1,13 @@
+﻿arrow0.x,267
+arrow0.y,23
+arrow1.x,267
+arrow1.y,-39
+
+onlinemarker.x,128
+onlinemarker.y,129
+
+origin.x,14
+origin.y,26
+
+validrect.top,21
+validrect.bottom,-23

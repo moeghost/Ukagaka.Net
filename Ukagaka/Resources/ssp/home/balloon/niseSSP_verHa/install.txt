@@ -1,0 +1,6 @@
+type,balloon
+name,NiseSSP verHa
+directory,NiseSSP verHa
+refresh,1
+script,\h\s[0]「%lastobjectname」\n\nのインストールが無事に終了しました。\e
+

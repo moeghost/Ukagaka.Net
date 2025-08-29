@@ -1,0 +1,4 @@
+charset,Shift_JIS
+type,balloon
+name,Grimoire paper
+directory,Grimoire paper

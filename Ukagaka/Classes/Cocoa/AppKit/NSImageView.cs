@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cocoa.AppKit
+{
+    public class NSImageView:NSView
+    {
+        internal void SetImage(NSImage img)
+        {
+            
+             this.Image = img;
+        }
+    }
+}

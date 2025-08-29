@@ -1,0 +1,5 @@
+charset,gb2312
+type,balloon
+name,Config-Series-Only balloon L(Lily)-Type
+directory,C_balloon_L
+refresh,1

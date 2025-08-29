@@ -1,0 +1,6 @@
+windowposition.y,0
+origin.y,12
+validrect.top,12
+validrect.bottom,-20
+arrow0.y,-23
+arrow1.y,-23

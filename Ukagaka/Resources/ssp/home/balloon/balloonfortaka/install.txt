@@ -1,0 +1,4 @@
+﻿Charset,UTF-8
+type,balloon
+name,frosted glass
+directory,frosted_glass

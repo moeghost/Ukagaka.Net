@@ -1,0 +1,5 @@
+﻿
+validrect.left,30
+validrect.top,40
+validrect.right,30
+validrect.bottom,-40

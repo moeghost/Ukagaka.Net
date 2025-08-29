@@ -1,0 +1,7 @@
+type,balloon
+name,Hukidasi7_R
+directory,Hukidasi7_R
+refresh,1
+script,\h\s[0]「%lastobjectname」\n\nのインストールが無事に終了しました。\e
+
+

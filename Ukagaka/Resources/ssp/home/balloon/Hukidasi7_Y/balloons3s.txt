@@ -1,0 +1,13 @@
+windowposition.x,0
+windowposition.y,0
+
+wordwrappoint.x,-12
+wordwrappoint.y,0
+
+arrow0.x,351
+arrow0.y,12
+arrow1.x,351
+arrow1.y,-34
+
+number.xr,-22
+number.y,-42

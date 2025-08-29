@@ -1,0 +1,10 @@
+﻿charset,UTF-8
+type,balloon
+name,ClearWhite
+directory,ClearWhite
+
+refresh,1
+
+craftmanw,時原砂
+craftmanurl,http://hk.geocities.com/tionzy/
+

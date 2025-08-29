@@ -1,0 +1,6 @@
+type,balloon
+name,幽叢に淅淅と
+accept,アン
+directory,yuso_ni_sekisekito
+refresh,1
+script,\h\s[0]「%lastobjectname」\n\nのインストール完了。\e

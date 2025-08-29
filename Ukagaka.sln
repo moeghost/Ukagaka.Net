@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ukagaka", "Ukagaka\Ukagaka.csproj", "{206243B6-828D-4A04-B56E-965C5168E011}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ukagaka", "Ukagaka", "{BF8C4A5A-8309-49BB-B30F-682C5D11F0CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Setup", "Setup", "{61BC292D-3466-4065-968B-B06D7C57EA08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shell", "Shell", "{3FD44714-5517-4EFE-A434-5BCF0D9035DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shiori", "Shiori", "{EEB61C6A-7025-419F-87C8-6AFA496BA22D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Saori", "Saori", "{7827EEA5-5889-4762-80BF-743D562D275A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{414E4B1E-AD8F-4AF7-87A2-7DA40FD0EC3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yaya.net", "Shiori\yaya.net\yaya.net.csproj", "{E3B01D2C-4E30-454F-AA59-E1522579F6E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{206243B6-828D-4A04-B56E-965C5168E011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{206243B6-828D-4A04-B56E-965C5168E011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{206243B6-828D-4A04-B56E-965C5168E011}.Debug|x86.ActiveCfg = Debug|x86
+		{206243B6-828D-4A04-B56E-965C5168E011}.Debug|x86.Build.0 = Debug|x86
+		{206243B6-828D-4A04-B56E-965C5168E011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{206243B6-828D-4A04-B56E-965C5168E011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{206243B6-828D-4A04-B56E-965C5168E011}.Release|x86.ActiveCfg = Release|x86
+		{206243B6-828D-4A04-B56E-965C5168E011}.Release|x86.Build.0 = Release|x86
+		{E3B01D2C-4E30-454F-AA59-E1522579F6E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3B01D2C-4E30-454F-AA59-E1522579F6E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3B01D2C-4E30-454F-AA59-E1522579F6E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E3B01D2C-4E30-454F-AA59-E1522579F6E1}.Debug|x86.Build.0 = Debug|Any CPU
+		{E3B01D2C-4E30-454F-AA59-E1522579F6E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3B01D2C-4E30-454F-AA59-E1522579F6E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3B01D2C-4E30-454F-AA59-E1522579F6E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{E3B01D2C-4E30-454F-AA59-E1522579F6E1}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{206243B6-828D-4A04-B56E-965C5168E011} = {414E4B1E-AD8F-4AF7-87A2-7DA40FD0EC3E}
+		{414E4B1E-AD8F-4AF7-87A2-7DA40FD0EC3E} = {BF8C4A5A-8309-49BB-B30F-682C5D11F0CF}
+		{E3B01D2C-4E30-454F-AA59-E1522579F6E1} = {EEB61C6A-7025-419F-87C8-6AFA496BA22D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF541687-F080-4423-B8F2-557F32281BB7}
+	EndGlobalSection
+EndGlobal

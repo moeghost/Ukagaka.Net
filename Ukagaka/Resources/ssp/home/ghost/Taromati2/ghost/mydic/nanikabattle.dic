@@ -1,0 +1,1156 @@
+﻿
+OnNanikaBattle
+{
+
+		
+	
+	_txt=OnNanikaBattleReady;
+	_txt+=OnNanikaBattleInter
+
+	_txt+=OnNanikaBattleMenu
+
+	_txt
+}
+
+
+OnNanikaBattleInter
+{
+	buff=""
+	battlepclick=0
+	select=0
+	p=""
+	nanikabattle=1;
+	running="nanikabattle"
+	_buff=OnNanikaBattleDataProcess(OnNanikaBattleData,0,3,-1)
+	OnNanikaBattleDataWrite(_buff)
+//	_file="profile/nanikabattledate.txt";
+	//OnNanikaBattleDataProcess(OnNanikaBattleDataLoad(_file),0,3,-1)
+//	OnNanikaBattleDataLoad(_file)
+}
+
+OnNanikaBattleMenu
+{
+	_txt="\_l[0,340]"
+	_txt+="\q[战斗,OnNanikaBattleReady,inter,begin]"
+	_txt+="\_l[60]\q[选择,OnNanikaSelect,0,,2,-1]"
+	_txt+="\_l[120]\q[升级,OnNanikaLevel]"
+	_txt+="\_l[180]\q[修行,OnNanikaExp]"
+	_txt+="\_l[240]\q[设定,OnNanikaOption]"
+	_txt;
+
+}
+
+OnNanikaSelect
+{
+	_txt="\C\0\*\![quicksession,1]\b[2]\c\![set,choicetimeout,0]"
+	_j=reference0
+	_p=reference1
+	_id=TOINT(reference2)
+	_order=TOINT(reference3)
+	if _argc>0
+		_j=_argv[0]
+	_j=TOINT(_j)
+	_file="profile/nanikabattledate.txt";
+	if (_t=OnNanikaBattleDataProcess(OnNanikaBattleDataLoad(_file),0,_id,_order))!=buff
+		buff=_t;
+	else
+		buff=OnNanikaBattleDataProcess(buff,0,_id,-1)
+	_tbuff=buff
+	SETDELIM(_tbuff,'*');
+	_n=ARRAYSIZE(_tbuff)-1;
+
+
+	_ghostnum=15;
+	_l=0;
+	if _j>=_n
+	_j=_n
+	elseif _j<=0
+	_j=0
+    	if _j+_ghostnum<_n
+        	_l=_j+_ghostnum;
+     	 else
+		_l=_n;
+	_t=("\f[color,205,148,159]■\f[color,default]","■")
+	_txt+="■选择人物 page"
+	for _i=0;_i<_n/_ghostnum+1;_i++
+	{
+		if _j==_ghostnum*_i
+			_txt+="%(_t[_i])"
+		else
+			_txt+="\__q[OnNanikaSelect,%(_ghostnum*_i),%(_p),%(_id),%(_order)]%(_t[_i])\__q"
+	}
+	_txt+="\n"
+	for _i=_j;_i<_l;_i++
+	{
+		_t=SPLIT(_tbuff[_i],'|')
+		_file="data/"+_t[0]+"_m.png"
+		if _p!=_tbuff[_i]
+		_txt+="\__q[OnNanikaSelect,%(_j),%(_tbuff[_i]),%(_id),%(_order),select]\_b[%(_file),inline,--option=opaque]\__q"
+		else
+		_txt+="\__q[OnNanikaSelect,%(_j),%(_tbuff[_i]),%(_id),%(_order),selected]\_b[%(_file),inline,--option=opaque]\__q"
+		if (_i+1)%3==0
+		_txt+="\n"
+
+
+	}
+	_txt+="\_l[180,20]"
+	_txt+="顺序:\__q[OnNanikaSelect,%(_j),%(_p),%(_id),%(TOINT(_order+1)%2)]逆顺 \__q \__q[OnNanikaSelect,%(_j),%(_p),2,%(_order)]STR\__q \__q[OnNanikaSelect,%(_j),%(_p),3,%(_order)]EXP\__q"
+	_txt+="\n\_l[180]抽出:\__q[OnNanikaSelectedDel,%(_j),%(_p),2,%(_order)]清空\__q"
+	_txt+="\n\_l[180]选择:\__q[OnNanikaSelectAuto,%(_j),%(_p),2,%(_order)]自动\__q"
+	if  (_p != ""||p!="")&&p!=_p
+	{
+		_var=SPLIT(_p,'|')[0]
+		_t=IsNanikaVarExist(_var,nanikabattleid,0,'|')
+		if  reference4=='select'	
+		{
+			select=0	
+		}
+		elseif reference4=='selected'
+		{
+			select=1;
+			if _t==-1
+			{		
+				battlepclick=1
+				p=""
+			}
+			else
+			{			
+				battlepclick=2
+				p=""
+			}
+		}
+	}
+	if select
+	{
+		if battlepclick==1
+		{
+			OnNanikaAdd(_p)
+		}
+		elseif battlepclick==2
+		{
+			OnNanikaDel(_p)
+		}
+	}
+	_tp=_p
+	if p!=""
+	{
+		_tp=p
+	}
+	_tp=SPLIT(_tp,'|')
+	_name=_tp[1];
+	_str=_tp[2];
+	_exp=_tp[3];
+	_int=_tp[4];
+	_sp1=_tp[5];
+	_sp2=_tp[6];
+	if _name!=""
+		_txt+="\n\_l[180]%(_name)"
+	if _str!=""
+		_txt+="\n\_l[180]STR:%(_str)"
+	if _exp!=""
+		_txt+="\n\_l[180]EXP:%(_exp)"
+	if _int!=""
+		_txt+="\n\_l[180]INT:%(_int)"
+	if _sp1!=""
+		_txt+=REPLACE(AreaTxt("攻撃スキル1:"+_tp[5],30,10,48,13),'#',',');
+	if _sp2!=""
+		_txt+=REPLACE(AreaTxt("攻撃スキル2:"+_tp[6],30,13,48,17),'#',',');
+	_txt+="\_l[0,220]"
+	_txt+="■选择人物（最大：10）\n"
+	_txt+=OnNanikaSelectedShow(_j,_p,_id,_order)
+	SETDELIM(nanikabattleid,'*')
+	_m=ARRAYSIZE(nanikabattleid)-1
+	_txt+="\_l[0,330]"
+	if _m>0
+		_txt+="\__q[OnNanikaBattleReady,inter]准备战斗\__q";
+	_txt+="\__q[OnNanikaBattle]终了\__q";
+	_txt+="\e"
+	_txt;
+
+}
+
+
+OnNanikaLevel
+{
+	_txt="\C\0\*\![quicksession,1]\b[2]\c\![set,choicetimeout,0]"
+	if (_t=OnNanikaBattleDataProcess(OnNanikaBattleIdLoad,0,3,0))!=nanikabattleid
+		nanikabattleid=_t;
+	if  (_t=OnNanikaBattleEIdLoad)!=nanikabattleeid
+		nanikabattleeid=_t;
+	if (_t=OnNanikaBattleVarLoad)!=nanikabattlevar
+		nanikabattlevar=_t
+	if  (_t=OnNanikaBattleCheckAttack(OnNanikaBattleIdLoad))!=nanikabattleid
+		nanikabattleid=_t
+	_tbuff="kikka|橘花|12|16|17|魔法#遠#100#2#愛情の芽生え#光|*towa|斗和|12|15|18|魔法#遠#100#2#愛の唄#爪|*"+nanikabattleid
+	SETDELIM(_tbuff,'*')
+	_n=ARRAYSIZE(_tbuff)-1
+	SETDELIM(nanikabattlevar,'*')
+	_txt+="仲间     %(TOINT(IN+2))/%(_n)     经验值  %(OnFormatData(TOSTR(nanikabattleexp)))\n"
+	_j=TOINT(reference0);
+	_l=0;
+	if _j>=_n
+	_j=_n
+	elseif _j<=0
+	_j=0
+    	if _j+6<_n
+        	_l=_j+6;
+     	 else
+		_l=_n;
+	_t=("\f[color,205,148,159]■\f[color,default]","■")
+	for _i=0;_i<_n/6+1;_i++
+	{
+		if _j==_i
+			_txt+="%(_t[_i])"
+		else
+			_txt+="\__q[OnNanikaLevel,%(_i*6)]%(_t[_i])\__q"
+	}
+
+	for _i=_j;_i<_l;_i++
+	{
+		_T=SPLIT(_tbuff[_i],'|');
+		_file="data/"+_T[0]+"_m.png"
+		_nameid=_T[0]
+		_name=_T[1]
+		_str=TOINT(_T[2])+0.0
+		_exp=TOINT(_T[3])
+		_int=TOINT(_T[4])
+		_level=TOINT(_T[7])
+		if _i==0||_i==1
+		{
+			_t=nanikabattlevar[_i]
+			_level=TOINT(SPLIT(_t,'|')[1])
+		}
+	//	_atk=POW(log(2.0,(_exp+(_level/100+1)/2)/1.5),(_level-1)/25.0)*(_level+1)*(_level+_str+9)/_str
+	//	_atk=POW(_str,_level/100)*POW(_level/20.0+1,_exp)*(_level+1)*(_level+1)*_exp/_str
+		_atk=POW(2,_exp-10)*POW(_exp,(_level+1)/20.0)*POW(_str,_level/100)*(_level+1)
+		_atk=OnNanikaBattleAtk(_level,_str,_exp,_int)
+	//	_nextatk=POW(log(2.0,(_exp+((_level+1)/100+1)/2)/1.5),_level/25.0)*(_level+1+1)*(_level+_str+9+1)/_str
+	//	_nextatk=POW(8,_exp-10)*POW(_exp,(_level+20)/20.0)*POW(_str,(_level+100)/100)*(_level+1+1)
+		_nextatk=OnNanikaBattleAtk(_level+1,_str,_exp,_int)
+		_next=POW(_str,(_level+1)/100.0)*POW((_level+1)/20.0+1,_exp)*(_level+1+1)*(_level+1+1)*_exp/_str
+
+		//_nextexp=POW(2,_t)*POW(_t,log(1/_t,(_level+50)/100.0*POW(1/_t,-1)))*_atk
+		_nextexp=OnNanikaBattleExp(_level,_str,_exp,_int)
+		_w=""//POW(1.2,log(1.2,(10/100.0+1)*POW(1.2,-1)))
+		if TOREAL(nanikabattleexp)>=_nextexp
+		_w="\q[升级,OnNanikaBattleLevelUp,%(_j),%(_nameid),%(_level),%(_nextexp)]"
+		else
+			_w="\f[color,192,192,192]升级\f[color,default]";
+		_x=60
+		_y=30
+		if _level>0
+		_txt+="\_l[0,%(_i%6*50+_y)]\_b[%(_file),inline,--option=opaque]%(_name)\_l[160,%(_i%6*50+_y)]Lv  %(_level)\_l[%(240),%(_i%6*50+_y)]%(_w)\_l[%(60),%(_i%6*50+_y+15)]攻击力:%(OnFormatData(TOSTR(_atk)))\_l[%(175),%(_i%6*50+_y+15)]下级:%(OnFormatData(TOSTR(_nextatk)))\_l[%(60),%(_i%6*50+_y+30)]下级经验：%(OnFormatData(TOSTR(_nextexp)))"
+		else
+		_txt+="\_l[0,%(_i%6*50+_y)]\_b[%(_file),inline,--option=opaque]%(_name)\_l[160,%(_i%6*50+_y)]Lv  %(_level)\_l[%(240),%(_i%6*50+_y)]%(_w)\_l[%(60),%(_i%6*50+_y+30)]开启经验：%(OnFormatData(TOSTR(_nextexp)))"
+	}
+	_txt+=OnNanikaBattleMenu
+	_txt
+}
+
+OnNanikaBattleLevelUp
+{
+	_j=reference0
+	_nameid=reference1
+	_level=TOINT(reference2);tt=_level
+	_nextexp=reference3
+	_T=SPLIT(_buff,'|');
+
+	_str=TOINT(_T[2])
+	_exp=TOINT(_T[3])
+//	_level=TOINT(_T[7]);ttt=_level
+//	_nextexp=POW(log(2.015,(_exp+(_level/100+1)/2)/2.0),_level/20.0.0))*(_level+1)*(_str+1)
+
+	if (_t=IsNanikaVarExist(_nameid,nanikabattlevar,0,'|'))!=-1
+	{
+		SETDELIM(nanikabattlevar,'*')
+		_Var=nanikabattlevar[_t]
+		SETDELIM(_Var,'|')
+		_level++;//tt=_Var[1]
+		nanikabattleexp=TOREAL(nanikabattleexp)-_nextexp
+		_Var[1]=_level
+		nanikabattlevar[_t]=_Var
+		OnNanikaBattleVarSave(nanikabattlevar)
+	}	
+
+	OnNanikaLevel
+
+
+
+}
+
+
+OnNanikaBattleBegin
+{
+	_k=_argv[0];
+	_l=_argv[1];
+	_buff="kikka|橘花|12|16|17|魔法#遠#100#2#愛情の芽生え#光|*towa|斗和|12|15|18|魔法#遠#100#2#愛の唄#爪|*"+nanikabattleid
+	_txt=OnNanikaBattleShow(_buff,_k,_l)
+	_txt+=OnNanikaBattleMenu
+	_txt;
+
+
+}
+
+
+
+OnNanikaBattleReady
+{
+	if reference0=="inter"
+	{
+		if nanikabattleid!=""
+			OnNanikaBattleIdSave(nanikabattleid);
+		OnNanikaBattleVar; 
+	}
+	if (_t=OnNanikaBattleDataProcess(OnNanikaBattleIdLoad,0,3,0))!=nanikabattleid
+		nanikabattleid=_t;
+	if  (_t=OnNanikaBattleEIdLoad)!=nanikabattleeid
+		nanikabattleeid=_t;
+
+	//OnNanikaBattleVarSave(nanikabattlevar);
+	if reference1=="begin"
+		OnNanikaBattleVarSave(nanikabattlevar);
+	if (_t=OnNanikaBattleVarLoad)!=nanikabattlevar
+		nanikabattlevar=_t
+
+	//	OnNanikaBattleVar; 
+	if  (_t=OnNanikaBattleCheckAttack(OnNanikaBattleIdLoad))!=nanikabattleid
+		nanikabattleid=_t
+
+	if ISVAR("nanikamid")==0
+	{
+		nanikamid=0
+	}
+	//else
+	//	nanikamid=TOINT(nanikabattlevar[1,'$'][1,'#'])
+	if ISVAR("nanikamhp")==0
+	{
+		nanikamid=0
+		_mhpmax=POW(log(1.01,nanikamid+2)+2,(nanikamid+5)/8.0)*(nanikamid+16)*(nanikamid+17)
+		nanikamhp=_mhpmax
+		
+	}
+	
+	if ISVAR("nanikabattleexp")==0
+		nanikabattleexp=100
+	//else	
+	//nanikabattleexp=TOREAL(nanikabattlevar[1,'$'][0,'#'])
+	if reference1=="begin"
+	_t=OnNanikaBattleVarLoad("loadvar");
+	OnNanikaBattleTime;
+	
+}
+
+
+
+OnNanikaSelectedShow
+{
+	_j=reference0
+	_p=reference1
+	_id=TOINT(reference2)
+	_order=TOINT(reference3)
+	if _argc>0
+	{
+		_j=_argv[0]
+		_p=_argv[1]
+		_id=TOINT(_argv[2])
+		_order=TOINT(_argv[3])
+
+	}
+	_txt="";
+	_tbuff=nanikabattleid
+	SETDELIM(_tbuff,'*')
+	_n=ARRAYSIZE(_tbuff)-1;
+	for _i=1;_i<_n+1;_i++
+	{
+		_t=SPLIT(_tbuff[_i-1],'|')
+		_file="data/"+_t[0]+"_m.png"
+		if _p!=_tbuff[_i-1]
+		_txt+="\__q[OnNanikaSelect,%(_j),%(_tbuff[_i-1]),%(_id),%(_order),select]\_b[%(_file),inline,--option=opaque]\__q"
+		else
+		_txt+="\__q[OnNanikaSelect,%(_j),%(_tbuff[_i-1]),%(_id),%(_order),selected]\_b[%(_file),inline,--option=opaque]\__q"
+		if _i%5==0
+		_txt+="\n"
+
+	}
+	_txt
+
+}
+
+OnNanikaSelectedDel
+{
+	nanikabattleid=""
+	battlepclick=0
+	select=0
+	OnNanikaSelect;
+}
+
+OnNanikaSelectAuto
+{
+	_tbuff=buff;
+
+	SETDELIM(_tbuff,'*')
+	_n=ARRAYSIZE(_tbuff)-1;
+	SETDELIM(nanikabattleid,'*')
+	_m=ARRAYSIZE(nanikabattleid)-1
+	_str='|';
+	_id=0;
+	for _i=0;_i<_n;_i++
+	{
+		_k=RAND(_n)
+		while _tbuff[_k]==-1
+		{
+			_k=RAND(_n)
+		} 
+		_Tbuff=SPLIT(_tbuff[_k],_str)
+		_Var=_Tbuff[_id]
+		_var=nanikabattleid
+		if _m<10&&_tbuff[_k]!=-1&&_tbuff[_k]!=""&&_Var!=""&&IsNanikaVarExist(_Var,_var,_id,_str)==-1
+		{
+			nanikabattleid+=_tbuff[_k]+"*"
+			SETDELIM(nanikabattleid,'*')
+			_m=ARRAYSIZE(nanikabattleid)-1
+		}
+		_tbuff[_k]=-1
+	 }
+
+	OnNanikaSelect;
+
+}
+
+
+
+OnNanikaAdd		
+{
+	_p=_argv[0]
+	_var=SPLIT(_p,'|')[0]
+	SETDELIM(nanikabattleid,'*')
+	_n=ARRAYSIZE(nanikabattleid)-1
+	if IsNanikaVarExist(_var,nanikabattleid,0,'|')==-1&&_n<10&&_p!=''
+	nanikabattleid+=_p+"*"
+}
+
+IsNanikaExist
+{
+	_p=_argv[0]
+	SETDELIM(nanikabattleid,'*')
+	_n=ARRAYSIZE(nanikabattleid)-1;
+	_f=0
+	for _i=0;_i<_n;_i++
+	{
+		if _p==nanikabattleid[_i]
+		_f=1	
+	}
+	_f
+
+}
+
+OnNanikaDel
+{
+	_p=_argv[0]
+	SETDELIM(nanikabattleid,'*')
+	_n=ARRAYSIZE(nanikabattleid);
+	for _i=0;_i<_n;_i++
+	{
+		if SPLIT(_p,'|')[0]==SPLIT(nanikabattleid[_i],'|')[0]
+		nanikabattleid[_i]=IARRAY;	
+	}
+}
+
+
+OnNanikaBattleData
+{
+	_path="data"
+	_files = FENUM(_path);
+	_txt=""
+	_tfilename=""
+	foreach _files; _file 
+	{
+		_filename=SPLITPATH(_file)[2];
+		_file = _path +"/"+ _file;
+		_fileext = TOLOWER(SPLITPATH(_file)[3]);
+		case _fileext 
+		{
+				when ".txt"
+				{
+					if (_t=OnNanikaBattleDataLoad(_file))!=""
+						_txt+=_t+'*'
+				}
+				when ".png"
+				{
+					if "_system_B" _in_ _filename
+						_tfilename+=_filename+"*"
+				}
+		}
+	}
+	if _tfilename!=""
+	OnNanikaBattleEIdWrite(_tfilename)
+	_txt;
+}
+
+OnNanikaBattleDataLoad
+{
+	_file=_argv[0]
+	_filename=SPLITPATH(_file)[2];
+	FCHARSET(0);
+	_txt=""
+	if FOPEN(_file,'r')
+	{
+		while (_buff=FREAD(_file))!=-1		
+		{
+			if  _buff[1,'識別子 : '] !=""
+				_txt+=_buff[1,'識別子 : ']+'|'
+			if _buff[1,'キャラクター名 : ']!=""
+				_txt+=_buff[1,'キャラクター名 : ']+'|'
+			if  _buff[1,'STR : '] !=""
+				_txt+=_buff[1,'STR : '][0,' , ']+'|'
+			if  _buff[1,'EXP : '] !=""
+				_txt+=_buff[1,'EXP : '][0,' , ']+'|'
+			if  _buff[1,'INT : '] !=""
+				_txt+=_buff[1,'INT : '][0,' , ']+'|'
+			if  _buff[1,'攻撃スキル1 : '] !=""
+				_txt+=REPLACE(_buff[1,'攻撃スキル1 : '],',','#')+'|'
+			if  _buff[1,'攻撃スキル2 : '] !=""
+				_txt+=REPLACE(_buff[1,'攻撃スキル2 : '],',','#')+'|'
+			if _buff=="*"
+				_txt+="*"
+		}
+	}
+	FCLOSE(_file)
+	FCHARSET(1);
+	_txt
+}
+
+OnNanikaBattleDataWrite
+{
+	_tbuff=_argv[0];
+	_file="profile/nanikabattledate.txt";
+	FCHARSET(0);
+	SETDELIM(_tbuff,'*');
+	_n=ARRAYSIZE(_tbuff)-1
+	_t=FOPEN(_file,'w');
+	_t="識別子 : ,キャラクター名 : ,STR : ,EXP : ,INT : ,攻撃スキル1 : ,攻撃スキル2 : "
+	for _i=0;_i<_n;_i++
+	{
+		_Tbuff=SPLIT(_tbuff[_i],'|')
+		_m=ARRAYSIZE(_Tbuff)
+
+		for _j=0;_j<_m;_j++
+		{
+			
+			_buff=REPLACE(_t[_j]+_Tbuff[_j],'#',',');
+			FWRITE(_file,_buff);
+
+		}
+		_buff="*"
+		FWRITE(_file,_buff);
+	}
+
+	FCLOSE(_file);
+	FCHARSET(1);
+}
+
+OnNanikaBattleEIdWrite
+{
+	_tfilename=_argv[0]
+	_file="profile/nanikabattleeid.txt";
+	FCHARSET(0);
+	if _tfilename!=""
+	{
+		_t=FOPEN(_file,'w');
+		FWRITE(_file,_tfilename);
+	}
+	FCLOSE(_file);
+	FCHARSET(1);	
+}
+
+OnNanikaBattleEIdLoad
+{
+	_file="profile/nanikabattleeid.txt";
+	FCHARSET(0);
+	_n=ARRAYSIZE(_tfilename)-1;
+	_txt=""
+	if FOPEN(_file,'r');
+	{
+		
+		while (_buff=FREAD(_file))!=-1
+		{
+			_txt+=_buff;
+		}
+	}
+	FCLOSE(_file);
+	FCHARSET(1);
+	_txt;
+}
+
+OnNanikaBattleIdSave
+{
+	_tbuff=_argv[0];
+	_file="profile/nanikabattleid.txt";
+	FCHARSET(0);
+	if _tbuff!=""
+	{
+		_t=FOPEN(_file,'w');
+		FWRITE(_file,_tbuff);
+	}
+	FCLOSE(_file);
+	FCHARSET(1);
+}
+
+OnNanikaBattleVar
+{
+	_tbuff=nanikabattleid;
+	SETDELIM(_tbuff,'*');
+	_var=OnNanikaBattleVarLoad;
+	_n=ARRAYSIZE(_tbuff)-1
+	SETDELIM(_var,'*');
+	_m=ARRAYSIZE(_var)-1
+	_Var=""
+	_str='|';
+	_id=0
+	if _m<=0
+	{
+		_name="kikka"
+		_var+=_name+_str+0+_str+"*"
+		_name="towa"
+		_var+=_name+_str+0+_str+"*"
+	}
+	for _i=0;_i<_n;_i++
+	{
+		_Tbuff=SPLIT(_tbuff[_i],_str)
+		_Var=_Tbuff[_id]	
+		if IsNanikaVarExist(_Var,_var,_id,_str)==-1
+		{
+			_name=_Tbuff[0]
+			_var+=_name+_str+0+_str+"*"
+			//_m=ARRAYSIZE(_var)-1
+		}
+	}	
+	OnNanikaBattleVarSave(_var);
+}
+
+IsNanikaVarExist
+{
+	_var=_argv[0]
+	_tbuff=_argv[1]
+	_id=TOINT(_argv[2]);
+	_str=_argv[3]
+	SETDELIM(_tbuff,'*');
+	_n=ARRAYSIZE(_tbuff)-1;
+	_f=-1
+	for _i=0;_i<_n;_i++
+	{
+		_Tbuff=SPLIT(_tbuff[_i],_str)
+		_Var=_Tbuff[_id]
+		if _var==_Var&&_Var!=""&&_Var!=-1
+		_f=_i
+	}
+	_f
+}
+
+
+
+
+
+OnNanikaBattleVarSave
+{
+	_tbuff=_argv[0];
+	_file="profile/nanikabattlevar.txt";
+	FCHARSET(0);
+	if _tbuff!=""
+	{
+		_t=FOPEN(_file,'w');
+		if _tbuff!="*"
+		{
+			FWRITE(_file,_tbuff);
+			_buff="$"+nanikabattleexp+"#"+nanikamid
+			FWRITE(_file,_buff);
+		}
+		else
+			FWRITE(_file,"");
+		
+	}
+	FCLOSE(_file);
+	FCHARSET(1);
+}
+
+
+
+
+OnNanikaBattleIdLoad
+{
+	_file="profile/nanikabattleid.txt";
+	FCHARSET(0);
+	_txt=""
+	if FOPEN(_file,'r');
+	{
+		while (_buff=FREAD(_file))!=-1
+		{
+			_txt+=_buff;
+
+		}
+	}
+	FCLOSE(_file);
+	FCHARSET(1);
+	_txt;
+}
+
+OnNanikaBattleVarLoad
+{
+	_file="profile/nanikabattlevar.txt";
+	FCHARSET(0);
+	_txt=""
+	if FOPEN(_file,'r');
+	{
+		while (_buff=FREAD(_file))!=-1
+		{
+			if _buff[0,"$"]!=""
+			_txt+=_buff[0,"$"];
+			if _buff[1,"$"]!=""&&_argv[0]=="loadvar"
+			{
+				nanikabattleexp=TOREAL(_buff[1,"$"][0,"#"])
+				nanikamid=_buff[1,"$"][1,"#"]
+			}
+		}
+	}
+	FCLOSE(_file);
+	FCHARSET(1);
+	_txt;
+}
+
+
+OnNanikaBattleDataProcess
+{
+	_buff=_argv[0]
+	_buffnum=TOINT(_argv[1])
+	_id=TOINT(_argv[2])
+	_order=TOINT(_argv[3])
+	_tbuff=_buff
+	SETDELIM(_tbuff,'*')
+	_txt="";
+	_n=ARRAYSIZE(_tbuff)-1
+	if _buffnum>_n||_buffnum==0
+		_buffnum=_n
+	_k=0
+	if _order!=-1
+	{
+		for _i=0;_i<_n-1;_i++
+		{
+			_k=_i;
+			for _j=_i+1;_j<_n;_j++
+			{
+					
+				_buffj=SPLIT(_tbuff[_j],'|')[_id]
+				_buffk=SPLIT(_tbuff[_k],'|')[_id]
+				_buffj=TOINT(CUTSPACE(_buffj))
+				_buffk=TOINT(CUTSPACE(_buffk))
+				_temp=""
+				if _buffj<_buffk&&_order==0//升序
+				{
+					_k=_j		;
+				}
+				if _buffj>_buffk&&_order==1//降序
+				{
+					_k=_j	;	
+				}			
+			}
+			if _k!=_i
+			{
+				_temp = _tbuff[_k];
+			 	_tbuff[_k] =  _tbuff[_i]
+				 _tbuff[_i] = _temp;
+
+			}
+		}
+	}
+
+	for _i=0;_i<_buffnum;_i++
+	{
+		_txt+=_tbuff[_i]+'*';
+	}
+
+	_txt;
+
+}
+
+
+OnNanikaBattleShow
+{
+	_tbuff=_argv[0];
+	_k=TOINT(_argv[1]);
+	_l=TOINT(_argv[2]);
+	_txt="\C\![quicksession,true]\c\0\b[2]\![set,choicetimeout,%((_k%2*2+1)*100)]"
+	SETDELIM(_tbuff,'*')
+	_n=ARRAYSIZE(_tbuff)-1
+	_x=0;
+	_y=0;
+	_a=0;
+	nanikamid=TOINT(nanikamid)
+	_file="data/_system_B_"+nanikamid+"_m.png";
+	if nanikamid>104
+		_file="data/_system_A_%(nanikamid-105)_m.png";	
+	_mhpmax=POW(log(1.01,nanikamid+2)+2,(nanikamid+5)/8.0)*(nanikamid+16)*(nanikamid+17)
+	if nanikamid>125
+	{
+		_txt="\C\![quicksession,true]\c\0\b[2]\![set,choicetimeout,0]"
+		 _txt+="已经完成全部战斗内容，要重新开始吗，注意人物等级和经验，怪物等级全部恢复初始值。"
+		_txt+="\n[150]\q[是,OnNanikaBattleRetset]"
+		_txt+="\n\q[否,OnNanikaBattle]"
+		_txt;
+		return;
+	}
+	if nanikamhp<=0
+	{
+		nanikamid++;
+		_mhpmax=POW(log(1.01,nanikamid+2)+2,(nanikamid+5)/8.0)*(nanikamid+16)*(nanikamid+17)
+//a=OnFormatData(POW(log(1.014,104+2)+2,(104+5)/10)*(104+16)*(104+17))
+//OnFormatData(POW(log(1.014,nanikamid+2)+2,(nanikamid+5)/20.0)*(nanikamid+16)*(nanikamid+17))
+//OnFormatData(POW(log(1.014,nanikamid+2)+2,(nanikamid+5)/20.0)*(nanikamid+16)*(nanikamid+17))
+		nanikamhp=_mhpmax
+
+	}
+	if nanikamhp>_mhpmax
+	nanikamhp=_mhpmax
+		
+
+
+	_x=120;
+	_y=25;
+	_hit="data2/hit.png"  
+	_txt+="仲间     %(TOINT(IN+2))/%(_n)  经验值  %(OnFormatData(TOSTR(nanikabattleexp)))  讨伐数：%(nanikamid)\n"
+	_txt+="%(ColorBar(6,100,nanikamhp,_mhpmax,,'colortxt=nobg'))\_l[130]%(SUBSTR(100.0*nanikamhp/_mhpmax,0,5))% "
+	_txt+="\__q[OnNanikaBattleMan,man]\_l[%(_x),%(_y)]\_b[%(_file),inline,--option=opaque]\__q";
+//	if _l==0
+//	_txt+="\_l[%(_x),%(_y)]\_b[%(_hit),inline,--option=use_self_alpha,--clipping=%(60*_k) 400 %(60*(_k+1)) 440]";
+//	if _l==1
+//	_txt+="\_l[%(_x),%(_y)]\_b[%(_hit),inline,--option=use_self_alpha,--clipping=%(60*_k) 160 %(60*(_k+1)) 200]";
+	_tr=0
+	_strtemp=0
+	nanikabattlestr=0
+	for _i=0;_i<4;_i++
+	{
+		for _j=0;_j<4;_j++
+		{
+			if _i==1||_i==2||_j==1||_j==2
+			{
+				_T=SPLIT(_tbuff[_a],'|')
+				_file="data/"+_T[0]+"_m.png"
+				_str=TOINT(_T[2])
+				_exp=TOINT(_T[3])
+				_int=TOINT(_T[4])
+				_L=TOINT(_T[5][6,'#'][1,' : ']);tt=_L
+				_level=TOINT(_T[7]);
+				if "魔法" _in_ _T[6] && _level>=100
+					_L=TOINT(_T[6][6,'#'][1,' : '])
+				if _a==0||_a==1
+				{
+					_t=nanikabattlevar[_a]
+					_level=TOINT(SPLIT(_t,'|')[1])
+				}
+				_x=_j*70+10
+				_y=_i*50+150;
+				if _level||_a==0||_a==1
+				{
+					if _level
+					{
+						if _l==0&&_l==_tr
+							_txt+="\_l[%(120),%(25)]\_b[%(_hit),inline,--option=use_self_alpha,--clipping=%(60*_k) 400 %(60*(_k+1)) 440]";
+						elseif _l==1&&_l==_tr
+							_txt+="\_l[%(120),%(25)]\_b[%(_hit),inline,--option=use_self_alpha,--clipping=%(60*_k) 160 %(60*(_k+1)) 200]";
+						elseif _l==_tr||(_tr+1)%_k==(_l)%_k+1
+						_txt+="\_l[%(120+6),%(25+4)]\_b[%(_hit),inline,--option=use_self_alpha,--clipping=%(60*_k) %(40*_L) %(60*(_k+1)-12) %(40*(_L+1)-8)]";
+					}
+					if _l==_tr&&(_a!=0&&_level>0&&_a!=1||_a==0&&_level>0||_a==1&&_level>0)
+					{
+						_txt+="\_l[%(_x),%(_y-10)]\_b[%(_file),inline,--option=opaque]"
+					//	_hitweight=POW(_exp,_level-1)*(_str+1)*(_str+1)/_str)
+					//	_hit=POW(_str,_level/100)*POW(_level/20.0+1,_exp)*(_level+1)*(_level+1)*_exp/_str
+						_hit=OnNanikaBattleAtk(_level,_str,_exp,_int)
+						_strtemp+=_hit
+						if _k%7==0
+						{
+							_hit=_hit*(1+0.0008*RAND(_int))
+			
+							nanikamhp-=_hit
+							nanikabattleexp+=((_hit)/_str)/10
+						}
+						if _l==_tr
+						_txt+="\_l[%(180),%(25+_l*10)]%(OnFormatData(TOSTR(_hit)))"	
+					}
+					else
+					{
+						_txt+="\_l[%(_x),%(_y)]\_b[%(_file),inline,--option=opaque]"
+						if (_tr+1)%_k==(_l)%_k+1&&(_a!=0&&_level>0||_a!=1&&_level>0||_a==0&&_level>0||_a==1&&_level>0)
+						{//POW((10+(1000/100+1)/2)/10.0,(1000-1)/10.0)*(1000+1)*(10+1)/10
+//OnFormatData(POW(log(2.0,(10+(1000/100+1)/2)/1.5),(1000-1)/25.0)*(1000+8)*(1000+9)/10)
+//POW(log(2.0,(10+(100/100+1)/2)/1.5),(100-1)/25.0)*(100+1)*(100+1)/10
+							//_hit=POW(log(2.015,(_exp+(_level/100+1)/2)/2.0),(_level-1)/25.0)*(_level+1)*(_level+1)/_str
+						//	_hit=POW(_str,_level/100)*POW(_level/20.0+1,_exp)*(_level+1)*(_level+1)*_exp/_str
+							_hit=OnNanikaBattleAtk(_level,_str,_exp,_int)
+							_strtemp+=_hit
+							if _k%7==0
+							{		
+								_hit=_hit*(1+0.0008*RAND(_int))
+								nanikamhp-=_hit
+								nanikabattleexp+=((_hit)/_str)/10
+								
+							}
+							_txt+="\_l[%(180),%(25+_tr*10)]%(OnFormatData(TOSTR(_hit)))"
+						}
+						elseif reference0=="man"&&_a==0
+						{
+						//	_hit=POW(log(2.0,(_exp+(_level/100+1)/2)/1.5),(_level-1)/25.0)*(_level+1)*(_level+1)/_str
+						//	_hit=POW(_str,_level/100)*POW(_level/20.0+1,_exp)*(_level+1)*(_level+1)
+							if _level>0
+							_hit=OnNanikaBattleAtk(_level,_str,_exp,_int)*_str/_exp
+							else
+							_hit=1.0;
+							nanikamhp-=_hit
+							nanikabattleexp+=_hit/_str
+							_txt+="\_l[%(180),%(25+_tr*10)]%(OnFormatData(TOSTR(_hit)))"
+						}
+					}
+					_tr++
+			
+				}
+		
+				_a++;
+			}
+		}
+	}
+	//strtemp+=_strtemp;
+	nanikabattlestr+=_strtemp
+	_txt
+}
+
+
+
+OnNanikaBattleCheckAttack
+{
+	_tbuff=_argv[0]
+	SETDELIM(_tbuff,'*')
+	_n=ARRAYSIZE(_tbuff)-1;
+	SETDELIM(nanikabattlevar,'*')
+	_txt=""
+	_picdex1=-1
+	_picdex2=-1
+	IN=0
+//nanikabattlevar
+	for _i=0;_i<_n;_i++
+	{
+		_Temp=_tbuff[_i]
+		SETDELIM(_Temp,'|')
+		;t2=_Temp
+		_temp1=_Temp[5];t3=_temp1
+		_temp2=_Temp[6];;t4=_temp2
+		_temp3=_Temp[7]
+		SETDELIM(_temp1,'#')
+		SETDELIM(_temp2,'#')
+		SETDELIM(_temp3,'#')
+		_atk1=CUTSPACE(_temp1[5]);t=_atk1
+		_atk2="";
+		if (_t=CUTSPACE(_temp2[5]))!=""
+			_atk2=_t;
+		_name=_Temp[0];
+		if (_t=ASEARCHEXT(_atk1,OnNanikaBattleAttackSort))!=IARRAY
+		_picdex1=OnNanikaBattleAttackSort()[_t];t1=_picdex1
+		if (_t=ASEARCHEXT(_atk2,OnNanikaBattleAttackSort))!=IARRAY
+		_picdex2=OnNanikaBattleAttackSort()[_t]
+		if (_t=IsNanikaVarExist(_name,nanikabattlevar,0,'|'))!=-1
+		{
+			SETDELIM(nanikabattlevar,'*')
+			_Var=SPLIT(nanikabattlevar[_t],'|')
+			_level=TOINT(_Var[1])
+			if _level>0
+			IN++;
+			_temp3=_level
+			_Temp[7]=_temp3
+		}
+		_temp1[6]=_picdex1
+		_temp2[6]=_picdex2
+		if _picdex1!=-1
+			_Temp[5]=_temp1
+		if _picdex2!=-1
+			_Temp[6]=_temp2
+		_tbuff[_i]=_Temp;
+
+		
+
+
+	}
+	_tbuff;
+}
+
+OnNanikaBattleAttackSort
+{
+"汎 : 0,連 : 1,衝 : 2,打 : 2,叩 : 2,突 : 3,爪 : 4,切 : 5,斬 : 5,火 : 6,炎 : 6,水 : 7,風 : 8,地 : 9,土 : 9,光 : 10,闇 : 11,爆 : 12,電 : 13,雷 : 13,毒 : 14"
+}
+
+ASEARCHEXT
+{
+	//_t2="铁观音, 乌龙,やぶきた,乌龙,茉莉花"
+	_str=_argv[0]
+	_array=_argv[1];
+	_n=ARRAYSIZE(_array);	
+	_Array=IARRAY
+	_a=0
+	//ASEARCHEXT("乌",_t2)
+	for _i=0;_i<_n;_i++
+	{
+		if _str _in_ _array[_i]&&_str!=""
+		{
+			_Array[_a]=_i;
+			_a++;
+		}
+	}
+	_Array
+}
+
+OnNanikaBattleTime
+{
+		_txt="";
+		k=TOINT(k-2)
+		if k<0
+			k=6
+		if k%7==0
+		{
+				if (t=(t+1)%2)==0
+			l=TOINT(l+1)%(IN+2)
+		}
+
+		if  nanikabattleclock>0
+		{
+			//OnFormatData((nanikabattlestr/1)*((GETTICKCOUNT-nanikabattleclock)/1000)/IN)
+	
+			_time=GETTICKCOUNT-nanikabattleclock
+			if _time>24*3600*1000
+				_time=24*3600*1000
+			_timeexp=nanikabattlestr*(_time/1000/IN/100)
+			//nanikamhp-=_timeatk
+			nanikabattleexp+=_timeexp	
+			if _time/1000>=60&&_timeexp>0
+			_txt+=OnFormatData(_timeexp)+"经验入手\x"
+			nanikabattle=1;
+			nanikabattleclock=0
+		}
+		if nanikabattleexp<0
+			nanikabattleexp=100
+		_txt+=OnNanikaBattleBegin(k,l)
+		_txt;
+}
+
+OnNanikaBattleMan
+{
+	OnNanikaBattleBegin(k,l)
+}
+OnFormatData
+{
+	_data=_argv[0]
+	_txt=""
+	//_str=",,,千,,,兆,,,吉,,,太,,,皮,,,艾,,,泽,,,尧,,,伯"
+	_str=",,,,万,,,,亿,,,,兆,,,,京,,,,垓,,,,杼,,,,穰,,,,沟,,,,涧,,,,正,,,,载,,,,极"
+	_i=0
+	_j=0
+	_hexnum="0123456789"
+	_weight=1.0
+	_data=TOSTR(_data)[0,'.']
+	_len=STRLEN(_data)-1
+			while IsNumber(SUBSTR(_data,_i,1))
+			{  
+				//STRSTR(hexnum,SUBSTR(1234567890,3,1),0)
+				_txt=_txt+SUBSTR(_data,_i,1)+_str[_len-_i];
+				if _str[_len-_i]!=""
+					_j++
+				_i++;
+			}
+	if _i>5
+	{
+		_txt=_txt[0,_str[4*(_j-1)]]+_str[4*(_j-1)]
+
+		i=_i-7;
+		if _i>10
+		{
+			i=_i
+			j=_j;
+		}
+
+	}
+	_txt
+}
+
+ClearNanikaBattleVar
+{
+
+	ERASEVAR("nanikabattle")
+	ERASEVAR("nanikabattleid")
+	ERASEVAR("nanikabattleeid")
+	ERASEVAR("nanikabattlevar")
+}
+
+OnNanikaTest//OnNanikaTest(8,18,3,0.951134)
+{//OnNanikaTest(8,18,5)
+	_txt="\C\![quicksession,true]\c\0\b[2]\![set,choicetimeout,0]"
+	_str=TOINT(_argv[0])
+	_exp=TOINT(_argv[1])+0.0
+	_int=_argv[2]
+//	_y=_argv[3];
+	for _i=1;_i<1051;_i++
+	{
+	if _i<106
+	{
+		_nanikamid=_i
+		if _i%4==0
+		_txt+="\_l[0,%((_i/4)*10)]%(_nanikamid)    "+OnFormatData(POW(log(1.01,_nanikamid+2)+2,(_nanikamid+5)/8.0)*(_nanikamid+16)*(_nanikamid+17))
+	}
+	_level=_i
+	//_exp=10
+//	_str=10
+	if _i%40==1
+		//_txt+="\_l[140,%((_i/40)*10)]%(_level)    "+OnFormatData(POW(log(1.1,(_exp+_str)/2+(_level-1)/100),(_level/20.0+1)/2)*(_level+1)*(_exp+_str)/2)
+	_txt+="\_l[140,%((_i/40)*10)]%(_level)   %(OnFormatData(POW(2,_exp/_str)*POW(2,_exp-10)/(_level+1))) "+OnFormatData(OnNanikaBattleAtk(_level,_str,_exp,_int))
+		
+}
+//
+//log(1.01,_level/20/10+(_exp-6))+1,_level/100+1)*(_level+1)*(_level+1)*_str
+//OnFormatData(POW(9.98,_exp-6)*POW(1.056818,_level))
+	_txt+="\x"
+
+	_txt;
+}
+
+OnNanikaBattleAtk
+{
+	_level=_argv[0]
+	_str=_argv[1]
+	_exp=_argv[2]
+	_int=_argv[3]
+	if _str<_int
+	{
+		_temp=_str
+		_str=_int
+		_int=_temp
+	}
+//	_Str=POW(_str,_exp-6)*POW((_level+100)/_level+_int*_level/10,(_level)/200)*(_level+1)*(_level+1)*_level*_str
+	_Str=POW(_exp,_exp-5)*POW(_exp-5,_level/75.0)*POW((_level+10)/(_level+20.0),_exp)*POW(_str,(_level+100)/100)*(_level+1)*(_level/100*_level/POW(2,_level/100)+1)*_str*_int
+	_Str;
+}
+
+OnNanikaBattleExp
+{
+	_level=_argv[0]
+	_str=_argv[1]
+	_exp=_argv[2]
+	_int=_argv[3]
+//	_nextexp=POW(_exp,_exp-5)*POW(1.056818,_level)
+	_nextexp=POW(_exp/5.0,(_level+1)/100.0)*POW(2,_exp/3.0)*POW(_str/10.0,log(_exp/10.0,(_level+1)/50.0*POW(_exp/5.0,-1)))*POW(_exp,_exp-5)*POW(_exp-5,_level/75.0)*POW((_level+10)/(_level+20.0),_exp)*POW(_str,(_level+100)/100.0)*(_level+1)*(_level/100.0*_level/POW(2,_level/100)+1)
+	_nextexp
+}
+
+OnNanikaBattleRetset
+{
+	nanikabattleexp=100;
+	nanikamid=0;
+	nanikabattlevar="*"
+	OnNanikaBattleVarSave(nanikabattlevar)
+	reference0="inter"
+	OnNanikaBattle
+}

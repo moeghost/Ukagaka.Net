@@ -1,0 +1,1334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Ukagaka.App" Collapsed="true">
+    <Position X="33.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.NSGraphics" Collapsed="true">
+    <Position X="44" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAwAAAACAAAAAAAAAQAAAAACA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSGraphics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCBorderlessWindow" Collapsed="true">
+    <Position X="8.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAiAAAAAAACAACAAEQAAAAAAAAEQAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Balloon Window\SCBorderlessWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSafetyBalloonBackgroundView" Collapsed="true">
+    <Position X="1.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAYCgAEQBAAAAAgLCYAIQkwCAAAAgAAABAAQAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Balloon Window\SCSafetyBalloonBackgroundView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSafetyBalloonController" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>qICQACxgBQABsUgNkHMSEEUQCAAV8EYZhJIoAFC64Ao=</HashCode>
+      <FileName>Classes\SCClasses\Balloon Window\SCSafetyBalloonController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCBannerDownloader" Collapsed="true">
+    <Position X="44" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Banner\SCBannerDownloader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCBannerServer" Collapsed="true">
+    <Position X="45.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAEAAAAAAAAAAAAAAAAABAAAAACAAAI=</HashCode>
+      <FileName>Classes\SCClasses\Banner\SCBannerServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCPrefWindowController" Collapsed="true">
+    <Position X="45.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Controllers\SCPrefWindowController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCAppQuitter" Collapsed="true">
+    <Position X="38.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCAppQuitter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCBalloonAlternative" Collapsed="true">
+    <Position X="15.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAqAQAAAAEAcoAAAAAAAAEAOCAAAAAAIACAACAI=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCBalloonAlternative.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCCommunicateBoxController" Collapsed="true">
+    <Position X="49.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCCommunicateBoxController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCDeletesList" Collapsed="true">
+    <Position X="51" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCDeletesList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCErrorStringServer" Collapsed="true">
+    <Position X="52.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCErrorStringServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCFoundation" Collapsed="true">
+    <Position X="35.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iDDLRUYQiJASoDJnQXIADlCBQEMAE4AEAJCAiAAwqAc=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCFoundation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCInstaller" Collapsed="true">
+    <Position X="51" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACEBAAEAIAAAAAAAAAAEKAAIAAAAIAAAAAI=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCInstaller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCMakotoAccessor" Collapsed="true">
+    <Position X="33.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCMakotoAccessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCMakotoLoader" Collapsed="true">
+    <Position X="35.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCMakotoLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCNarMaker" Collapsed="true">
+    <Position X="38.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAEAAACAAAAAAIAAAAAAAAAAAAAAIBAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCNarMaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCOnlineInstaller" Collapsed="true">
+    <Position X="42.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAEAAAAAAAAAAAAAAAAIAAAAAAAAAAI=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCOnlineInstaller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCScriptEntry" Collapsed="true">
+    <Position X="47.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAQAAAABAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCScriptEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCScriptErrorException" Collapsed="true">
+    <Position X="49.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCScriptErrorException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCScriptRunner" Collapsed="true">
+    <Position X="51" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aSQgohAYAQGgIcEFCQklgBgcQFgIEFwGAaoEJMBKEAc=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCScriptRunner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCScriptServer" Collapsed="true">
+    <Position X="52.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAggAAAAABAAAAAAKAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCScriptServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSelectorInvoker" Collapsed="true">
+    <Position X="33.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCSelectorInvoker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSessionChanger" Collapsed="true">
+    <Position X="33.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgAAAAgAACAACgEAAAAAAAACAAAAAAAAAAAIAAAAAII=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCSessionChanger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSessionStarter" Collapsed="true">
+    <Position X="37" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAAAAAAACAAAAAAAAAAAgAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCSessionStarter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSessionVanisher" Collapsed="true">
+    <Position X="38.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQQAAAAAACAAAAAAAAEAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCSessionVanisher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCShioriAccessor" Collapsed="true">
+    <Position X="49.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAIAAAAAAAAIAAABACAAAAAAAAAAAACAAAABAg=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCShioriAccessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCShioriLoader" Collapsed="true">
+    <Position X="51" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAQAEAAAIACAIAAAAAAAAAAAQAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCShioriLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSimpleLinesList" Collapsed="true">
+    <Position X="33.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCSimpleLinesList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCStringsServer" Collapsed="true">
+    <Position X="40.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCStringsServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCUpdateDataMaker" Collapsed="true">
+    <Position X="51" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAEAAAEAAAAAAAAAAAAIQAAAAAAAAAI=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCUpdateDataMaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCUpdates2Dau" Collapsed="true">
+    <Position X="52.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCUpdates2Dau.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCUpdatesList" Collapsed="true">
+    <Position X="33.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCUpdatesList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCUpdatesTxt" Collapsed="true">
+    <Position X="35.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCUpdatesTxt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCVanishWindowController" Collapsed="true">
+    <Position X="37" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Core Classes\SCVanishWindowController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCBlockedDescription" Collapsed="true">
+    <Position X="47.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIABAAAAAgQAABAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Description\SCBlockedDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCDescription" Collapsed="true">
+    <Position X="6.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAgKgAAABAQABECAAABAgAAAIEgAQAAAEAAAEAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Description\SCDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCGhostManager" Collapsed="true">
+    <Position X="37" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CICAAEADABBAAEAEiASBAQmAAmAIQAACAQgAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Ghost Manager\SCGhostManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCGhostManagerWindowController" Collapsed="true">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABEIMSABIhGE0AEQggAAAYQIICAICCAAiABAAVBAAgs=</HashCode>
+      <FileName>Classes\SCClasses\Ghost Manager\SCGhostManagerWindowController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCGhostPreviewView" Collapsed="true">
+    <Position X="38.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Ghost Manager\SCGhostPreviewView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCInstalledBalloonsList" Collapsed="true">
+    <Position X="47.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAAAQAAAQAAA=</HashCode>
+      <FileName>Classes\SCClasses\Ghost Manager\SCInstalledBalloonsList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCInstalledGhostsList" Collapsed="true">
+    <Position X="49.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBCaAiACACQAiQqCgACQEQGIIAADQAQiAAIAYBEACgA=</HashCode>
+      <FileName>Classes\SCClasses\Ghost Manager\SCInstalledGhostsList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCShellsList" Collapsed="true">
+    <Position X="47.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAkAAAiIAAAIABACAEAAAAAABAAQgAAAAABAAAoA=</HashCode>
+      <FileName>Classes\SCClasses\Ghost Manager\SCShellsList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCBalloonSkin" Collapsed="true">
+    <Position X="40.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAgAACAABAABAAAEQABAABAAIAAAQAAAgA=</HashCode>
+      <FileName>Classes\SCClasses\Image Classes\SCBalloonSkin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCBalloonSkinServer" Collapsed="true">
+    <Position X="42.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAACAgBAAAAEASBAoAAAAEEABCgAAEAAgAAAE=</HashCode>
+      <FileName>Classes\SCClasses\Image Classes\SCBalloonSkinServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCShellLayer" Collapsed="true">
+    <Position X="45.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAsgAAACAICIEQAAAAAAEAAAAIgAAAAgg=</HashCode>
+      <FileName>Classes\SCClasses\Image Classes\SCShellLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCShellView" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAQAAAABAAQAAYQAAAAkAgAAABEAIBAA=</HashCode>
+      <FileName>Classes\SCClasses\Image Classes\SCShellView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSurface" Collapsed="true">
+    <Position X="42.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAAgAAAABAEAAAAgIAwACAQgAAAAAggAAEoAgA=</HashCode>
+      <FileName>Classes\SCClasses\Image Classes\SCSurface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSurfaceCollision" Collapsed="true">
+    <Position X="44" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAQAACAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Image Classes\SCSurfaceCollision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSurfaceServer" Collapsed="true">
+    <Position X="45.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAABQAAACABgAABAIAAAAAAgAAAIAgAAQAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Image Classes\SCSurfaceServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCImageUtils" Collapsed="true">
+    <Position X="44" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\ImageUtils\SCImageUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCMailCheckDaemon" Collapsed="true">
+    <Position X="52.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAgACAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Misc Daemons\SCMailCheckDaemon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCTimeEventTriggerDaemon" Collapsed="true">
+    <Position X="49.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAEAAAAAAAABAAAAAAAAAAAEAAAAAAI=</HashCode>
+      <FileName>Classes\SCClasses\Misc Daemons\SCTimeEventTriggerDaemon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCHLSensorPlugin" Collapsed="true">
+    <Position X="12.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Plugin\SCHLSensorPlugin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCHLSensorResponse" Collapsed="true">
+    <Position X="42.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Plugin\SCHLSensorResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCPlugin" Collapsed="true">
+    <Position X="12.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Plugin\SCPlugin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCPluginManager" Collapsed="true">
+    <Position X="44" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Plugin\SCPluginManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCAlphaConverter" Collapsed="true">
+    <Position X="37" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\SCTool\SCAlphaConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCFileUtils" Collapsed="true">
+    <Position X="33.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\SCTool\SCFileUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSeriko" Collapsed="true">
+    <Position X="35.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAEBAAAAASAQASEAIGRiAAAIAAAgAAAIAAECEAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Seriko\SCSeriko.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSerikoBindCenter" Collapsed="true">
+    <Position X="37" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAECAAgEAAhAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Seriko\SCSerikoBindCenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSerikoEnabledBindGroup" Collapsed="true">
+    <Position X="38.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAACAAAAAAIACAICEAAAAEAAAAAAEAAAAgBAAAIAA=</HashCode>
+      <FileName>Classes\SCClasses\Seriko\SCSerikoEnabledBindGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSerikoLibrary" Collapsed="true">
+    <Position X="40.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQBAAAAAAAAgAAAAAAAgAAAEEAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Seriko\SCSerikoLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSerikoSeqGroup" Collapsed="true">
+    <Position X="42.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAEAAAAAEAAAAAAgAAAAAAAAAAQAQACAAAAAAg=</HashCode>
+      <FileName>Classes\SCClasses\Seriko\SCSerikoSeqGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSerikoSeqIntervalEntry" Collapsed="true">
+    <Position X="44" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAgAAABAgAAAABAAAAoQAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Seriko\SCSerikoSeqIntervalEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSerikoSeqOptionEntry" Collapsed="true">
+    <Position X="45.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAABAAAAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Seriko\SCSerikoSeqOptionEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSerikoSeqPatternEntry" Collapsed="true">
+    <Position X="47.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAQAACCAAIQgwACEAMAAAAgAAAAIAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Seriko\SCSerikoSeqPatternEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSerikoSequence" Collapsed="true">
+    <Position X="49.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAACAAAAAACIAIAADICEAAAAAAAAAAAAAAACAgA=</HashCode>
+      <FileName>Classes\SCClasses\Seriko\SCSerikoSequence.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSerikoSequenceRunner" Collapsed="true">
+    <Position X="51" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAABgAAgCAAAAGkIAUAAAgEBAAQAAEAAAAAFAACAQA=</HashCode>
+      <FileName>Classes\SCClasses\Seriko\SCSerikoSequenceRunner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCAliasManager" Collapsed="true">
+    <Position X="6.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCAliasManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCAliasNameTable" Collapsed="true">
+    <Position X="35.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAgAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCAliasNameTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCContextMenuItemCell" Collapsed="true">
+    <Position X="22" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQkCBAAAAAABAAAAEAQEAAAAAhEAEAACAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCContextMenuItemCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCContextMenuView" Collapsed="true">
+    <Position X="17.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAGAgAAAAkAAAAAQEAAAAAAAABAEAIAAAAAAAAEAA=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCContextMenuView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCHeadlineSession" Collapsed="true">
+    <Position X="40.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCHeadlineSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCInputBoxSession" Collapsed="true">
+    <Position X="45.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCInputBoxSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCMenuAppearanceServer" Collapsed="true">
+    <Position X="37" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAiQOIJAABAIgBgIlDDEYiACBAAQACEgBAEIKKEAA=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCMenuAppearanceServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCNetworkUpdater" Collapsed="true">
+    <Position X="40.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAEAAAEAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCNetworkUpdater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSession" Collapsed="true">
+    <Position X="52.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KqRocpVps7ZBuVuXKGJkIrICFCIOCQEIcaAcwBaChJI=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSessionCloser" Collapsed="true">
+    <Position X="35.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCSessionCloser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCShell" Collapsed="true">
+    <Position X="40.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAQIACACIBAjIcEAEBAAAEIEAAggAACggAABDAEgA=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCShell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCShellChangingSession" Collapsed="true">
+    <Position X="42.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAEAAAEAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCShellChangingSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCShellContextMenuMaker" Collapsed="true">
+    <Position X="44" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAhEkIQIQAAAEUkBIAECAAAARAACAEAEEAEBCgagCAE=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCShellContextMenuMaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCShioriSessionResponce" Collapsed="true">
+    <Position X="52.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAABAgBAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCShioriSessionResponce.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSpirit" Collapsed="true">
+    <Position X="35.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ESAFQACAFGbBABIAEAEAAgAAIAAEACAACggAAICQlAg=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCSpirit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCTeachSession" Collapsed="true">
+    <Position X="47.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Session\SCTeachSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCShellWindow" Collapsed="true">
+    <Position X="11" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBIAEgAAQAEAAAEAAIEkAUAAAAAUACBAAQCAAACQAAQ=</HashCode>
+      <FileName>Classes\SCClasses\Shell Window\SCShellWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCShellWindowController" Collapsed="true">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIEAAABAACAYQNkAcwAEJABAAFhAEIAYCnCECBZAE=</HashCode>
+      <FileName>Classes\SCClasses\Shell Window\SCShellWindowController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCSSTPDaemon" Collapsed="true">
+    <Position X="37" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACAAAAAAAAAAAAABAAAAQAAAAAAEEAAAAEA=</HashCode>
+      <FileName>Classes\SCClasses\SSTP Daemon\SCSSTPDaemon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCStatusProgressBarView" Collapsed="true">
+    <Position X="6.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAQIAAAACAAgAAACAAAESAwAyAAAIAAAQAgEAEAIA=</HashCode>
+      <FileName>Classes\SCClasses\Status\SCStatusProgressBarView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCStatusTextView" Collapsed="true">
+    <Position X="10.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAAACAACAACAAAAAACA4AAAAAAIAAhgEAAIAgA=</HashCode>
+      <FileName>Classes\SCClasses\Status\SCStatusTextView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCStatusWindow" Collapsed="true">
+    <Position X="13.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SCClasses\Status\SCStatusWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCStatusWindowCenter" Collapsed="true">
+    <Position X="38.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQQQAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAQ=</HashCode>
+      <FileName>Classes\SCClasses\Status\SCStatusWindowCenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SCStatusWindowController" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIgAAAIAGQEAAAAIiAIAAAAgAAAEAAAAAAIAAAQAIAA=</HashCode>
+      <FileName>Classes\SCClasses\Status\SCStatusWindowController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.Integer" Collapsed="true">
+    <Position X="42.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\ToolKit\Integer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.StaticMethod" Collapsed="true">
+    <Position X="45.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\ToolKit\StaticMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.StringBuffer" Collapsed="true">
+    <Position X="47.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAQAEAAQAAEAAAABABAAAAIAQAAAAABAAAAACA=</HashCode>
+      <FileName>Classes\ToolKit\StringBuffer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.StringExtension" Collapsed="true">
+    <Position X="49.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Classes\ToolKit\StringExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.StringTokenizer" Collapsed="true">
+    <Position X="51" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAACAIAAAAAAAAAAIAAAAAAAAAAAAAAiAA=</HashCode>
+      <FileName>Classes\ToolKit\StringTokenizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.SystemTimer" Collapsed="true">
+    <Position X="33.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Classes\ToolKit\SystemTimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="45.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAgAAAgAAAABgCAIABAAEAASAKAgAAEAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Ukagaka.Shell" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="42.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgEAAAADAAIAAQBCAABAAAgBAAAAAAAiAAIAABA=</HashCode>
+      <FileName>Shell.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Ukagaka.ShellWpf" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>ShellWpf.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AppSettings.Settings" Collapsed="true">
+    <Position X="38.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BoBEAAAuIAEhBIYAAAIDEAgKAAQAYEEoQgIgRHAAAHE=</HashCode>
+      <FileName>AppSettings\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Aya" Collapsed="true">
+    <Position X="35.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAGEESAAAQAAAAQCAAAIAAiQgEgAMAAECgIAQAA=</HashCode>
+      <FileName>Classes\aya\Aya.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.DataDecodingInputStream" Collapsed="true">
+    <Position X="45.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAASAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Classes\aya\DataDecodingInputStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Dictionary" Collapsed="true">
+    <Position X="47.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAiABAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Classes\aya\Dictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.IllegalTokenException" Collapsed="true">
+    <Position X="38.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\aya\IllegalTokenException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.LexicalAnalyzer" Collapsed="true">
+    <Position X="44" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIQAIACAAAAAACGAIhAAAAASBCAgQFAQAAIQAAACAA=</HashCode>
+      <FileName>Classes\aya\LexicalAnalyzer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.NoMoreTokensException" Collapsed="true">
+    <Position X="47.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\aya\NoMoreTokensException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Preprocessor" Collapsed="true">
+    <Position X="52.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Classes\aya\Preprocessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Token" Collapsed="true">
+    <Position X="37" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACAACAQMAICIAAAAAABAAAAAAQABgAAAAAA=</HashCode>
+      <FileName>Classes\aya\Token.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Eval.GlobalNamespace" Collapsed="true">
+    <Position X="3.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiAIKAAgDgAEAABAAAAAUAQRAABoAAAwAACACAAAFAg=</HashCode>
+      <FileName>Classes\aya\Eval\GlobalNamespace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Eval.Namespace" Collapsed="true">
+    <Position X="3.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAABCAAAAAAAAAAAAAAAAAAAAAAAABAg=</HashCode>
+      <FileName>Classes\aya\Eval\Namespace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Eval.SystemCall" Collapsed="true">
+    <Position X="0.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAIGaFAIqMBEjhDEgYQlDwiBKwEaOJVQAgBQQnABgg=</HashCode>
+      <FileName>Classes\aya\Eval\SystemCall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Eval.Value" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAIAIAAAAIAMIEAAlAAAAAABACAAAIIAAQAIABg=</HashCode>
+      <FileName>Classes\aya\Eval\Value.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="aya.Eval.Variable" Collapsed="true">
+    <Position X="40.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAQABAAIAABAgAAAAgAAAAAEAEAACAAAAAAAAAACAA=</HashCode>
+      <FileName>Classes\aya\Eval\Variable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Eval.VariablePointer" Collapsed="true">
+    <Position X="42.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAQAAABACAAAAAAAAEAQAABBAAAAAAAgAAAAQAAQAA=</HashCode>
+      <FileName>Classes\aya\Eval\VariablePointer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Node.Block" Collapsed="true">
+    <Position X="37" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJIAAABIJCAAAACIAAgBAAAEAAABAhAAAAAEAKEAAAA=</HashCode>
+      <FileName>Classes\aya\Node\Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Node.Case" Collapsed="true">
+    <Position X="9.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAIABAACAAAAAACAGAAAACEA=</HashCode>
+      <FileName>Classes\aya\Node\Case.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Node.Condition" Collapsed="true">
+    <Position X="44" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAIAAAAAABAAAAAACAAAAAAAAAAAACAAAAAEI=</HashCode>
+      <FileName>Classes\aya\Node\Condition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Node.Expression" Collapsed="true">
+    <Position X="49.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAIQiAgAAAAAADAAKAAAAEDAAAAAACAAAAAIA=</HashCode>
+      <FileName>Classes\aya\Node\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Node.Function" Collapsed="true">
+    <Position X="0.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAABAAAAAAAFAAAAAAAAQAAABAA=</HashCode>
+      <FileName>Classes\aya\Node\Function.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Node.FunctionCall" Collapsed="true">
+    <Position X="37" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAAAAQAAAAAAAAAACAAAAEAAAAAAACEAAEBAA=</HashCode>
+      <FileName>Classes\aya\Node\FunctionCall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Node.Statement" Collapsed="true">
+    <Position X="9.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAgAAJAAAAIAoABAAAQGAAAAAAAEAEAACIAABAAA=</HashCode>
+      <FileName>Classes\aya\Node\Statement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Node.Substitution" Collapsed="true">
+    <Position X="52.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABIAAAACAEAAABAAIAAAAAAAAAAAAAAAgAEAA=</HashCode>
+      <FileName>Classes\aya\Node\Substitution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Node.VariableReference" Collapsed="true">
+    <Position X="44" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAUCAEAAAAEAAAEAAAAAAAAAAABBAA=</HashCode>
+      <FileName>Classes\aya\Node\VariableReference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="aya.Node.Parser" Collapsed="true">
+    <Position X="51" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQRCgAAgAAAACAASBAIJAAAAAIQgAAAAMAAAAAAA=</HashCode>
+      <FileName>Classes\aya\Parser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.CGFloat" Collapsed="true">
+    <Position X="40.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEQAGAAgAAAAAAACAAAAAgAAAAAiA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\CGFloat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.CGImage" Collapsed="true">
+    <Position X="42.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAEQAAAAAAAAAAAAEAAACAAAAAAAAAAAgABAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\CGImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSArray" Collapsed="true">
+    <Position X="49.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSArray.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSAttributedString" Collapsed="true">
+    <Position X="6.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAABGAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSAttributedString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSBezierPath" Collapsed="true">
+    <Position X="51" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQAAAAAgAAAAAAAAAAQAAAAAAAAAAAgAAAAIAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSBezierPath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSBundle" Collapsed="true">
+    <Position X="52.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAIAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSBundle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSButton" Collapsed="true">
+    <Position X="33.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEQAAAAAAEAAAABAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSButtonCell" Collapsed="true">
+    <Position X="24.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSButtonCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSCell" Collapsed="true">
+    <Position X="23.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAgAAAAAgAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSClipView" Collapsed="true">
+    <Position X="28.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAQAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSClipView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSColor" Collapsed="true">
+    <Position X="35.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAPgARAAAIANpAAAIEAwEAABAAAAAgACAAAKHFBAQA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSDictionary" Collapsed="true">
+    <Position X="3.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAEAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSDraggingInfo" Collapsed="true">
+    <Position X="37" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSDraggingInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSDrawer" Collapsed="true">
+    <Position X="38.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSDrawer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSEvent" Collapsed="true">
+    <Position X="40.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSFont" Collapsed="true">
+    <Position X="42.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAABAIQAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSFont.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSImage" Collapsed="true">
+    <Position X="45.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAABAAoAAQREgAAAIIAIAAAQEAACCAAgAAAAEAAIAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSImageView" Collapsed="true">
+    <Position X="47.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSImageView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSMenu" Collapsed="true">
+    <Position X="49.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEIAAAAAAAAAACAACAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSMenuItem" Collapsed="true">
+    <Position X="51" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAFAAEAAAAAAAEAAEAAAAgAQAEBCAAABAAAAAAAII=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSMenuItemCell" Collapsed="true">
+    <Position X="22" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIQggBAQAAAAVAAAAAQAEAAEEAIQBAACAAAAAACAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSMenuItemCell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSMenuView" Collapsed="true">
+    <Position X="17.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAASABAAACAAAAAAQAAAAAAAAAIAAAKAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSMenuView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSMutableAttributedString" Collapsed="true">
+    <Position X="6.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAABAAAACAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSMutableAttributedString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSMutableDictionary" Collapsed="true">
+    <Position X="3.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAABAAAEAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSMutableDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSMutableRect" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAYIAAAIAAAAAAQAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSMutableRect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSNotification" Collapsed="true">
+    <Position X="52.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAQAEAAEABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSNotification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSPasteboard" Collapsed="true">
+    <Position X="33.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSPasteboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSPoint" Collapsed="true">
+    <Position X="0.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAYAAAAAAAAAAACAAAAAAABgAAAAYAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSRange" Collapsed="true">
+    <Position X="5.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAgAAAIABAAAAAAIAAAAAAAAAAAiA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSRange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSRect" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAAAAABAAAgAYAQIIAAEAiAAAAAAAgAABgAAoBYBA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSRect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSScreen" Collapsed="true">
+    <Position X="35.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAIAAAAAQAEAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSScrollView" Collapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSScrollView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSSelector" Collapsed="true">
+    <Position X="37" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSSize" Collapsed="true">
+    <Position X="38.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAQBQAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSSize.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSSlider" Collapsed="true">
+    <Position X="40.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSSlider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSTableColumn" Collapsed="true">
+    <Position X="42.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAQAgAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSTableColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSTableView">
+    <Position X="26.5" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Interface Name="Cocoa.AppKit.NSTableView.Delegate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Classes\Cocoa\AppKit\NSTableView.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Interface>
+      <Class Name="Cocoa.AppKit.NSTableView.DataSource" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Classes\Cocoa\AppKit\NSTableView.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACCAACAACAACAAAAgAAQAAAAAAAAIAAAAAQ=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSTableView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSTableViewItem" Collapsed="true">
+    <Position X="44" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSTableViewItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSTabView" Collapsed="true">
+    <Position X="31" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSTabView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSTextField" Collapsed="true">
+    <Position X="45.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAACAAAAAAAAQgAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSTextField.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSThread" Collapsed="true">
+    <Position X="47.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSThread.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSTimer" Collapsed="true">
+    <Position X="3" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQBCAAEAKAAAAAAAAAAAAAAAEAAACBAAAAAAAAABAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSTimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSUserDefaults" Collapsed="true">
+    <Position X="49.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAIAEgAAAAAAAAAQAAIABAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSUserDefaults.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cocoa.AppKit.NSView" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAABAAQAAwAAAAACgAQAAQSAAAEgCKAICCQAiYoE=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cocoa.AppKit.NSWindow" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJIAAgAAAQABAAAACCA0AUIQAAIBAEAEAQAAkQAAYAE=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Cocoa.AppKit.NSWindowController" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAABAAAABEAAAAAAACACgAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSWindowController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Ukagaka.Classes.Cocoa.AppKit.NSObject" Collapsed="true">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SCBalloonScrollArrow" Collapsed="true">
+    <Position X="13" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAABAAgAAEAIBQAAEGgcAABAEAIYAAgAEECBAA=</HashCode>
+      <FileName>Classes\SCClasses\Balloon Window\SCBalloonScrollArrow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SCBalloonTextView" Collapsed="true">
+    <Position X="19.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SBIAIAAAACAAiQAAAFAABASCZAgEEAUIAIBgAEAAggA=</HashCode>
+      <FileName>Classes\SCClasses\Balloon Window\SCBalloonTextView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Common.ExtDate" Collapsed="true">
+    <Position X="51" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Common\ExtDate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Common.ExtPing" Collapsed="true">
+    <Position X="52.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAAAIAAAAAAAAAAAAAAAAAAAAAgAAAAACA=</HashCode>
+      <FileName>Common\ExtPing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Common.ExtXML" Collapsed="true">
+    <Position X="33.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Common\ExtXML.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.Properties.Resources" Collapsed="true">
+    <Position X="33.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQBAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ukagaka.Properties.Settings" Collapsed="true">
+    <Position X="40.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utils.BufferReader" Collapsed="true">
+    <Position X="38.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\BufferReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utils.File" Collapsed="true">
+    <Position X="35.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAoAAAABAAAAARkkACgAQBSAIGCQEAIAAIUAAUIBAI=</HashCode>
+      <FileName>Utils\File.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utils.ImageHelper" Collapsed="true">
+    <Position X="40.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\ImageHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utils.TimerTask" Collapsed="true">
+    <Position X="35.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\TimerTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Cocoa.AppKit.NSWindowDelegate" Collapsed="true">
+    <Position X="33.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAABAAAAAEAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Classes\Cocoa\AppKit\NSWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

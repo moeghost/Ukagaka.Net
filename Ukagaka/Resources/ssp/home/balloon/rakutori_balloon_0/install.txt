@@ -1,0 +1,8 @@
+type,balloon
+name,for Rakutori
+accept,ÂäøB
+directory,rakutori_balloon
+refresh,1
+script,\h\s[0]¡¸%lastobjectname¡¹°¡...\w9\n\s[5]ÊÇÂäøBµÄŒ£ŒÙŒ¦Ô’¿òÄØ...\w9\w9\nÖxÖx^^\e
+
+

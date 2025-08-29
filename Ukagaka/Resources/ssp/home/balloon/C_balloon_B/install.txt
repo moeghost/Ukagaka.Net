@@ -1,0 +1,5 @@
+charset,gb2312
+type,balloon
+name,C.S.Only Balloon B(Break)-Type
+directory,C_balloon_B
+refresh,1

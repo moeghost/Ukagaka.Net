@@ -1,0 +1,13 @@
+windowposition.x,40
+windowposition.y,0
+
+validrect.left,0
+validrect.top,6
+validrect.right,0
+validrect.bottom,-18
+
+onlinemarker.x,140
+onlinemarker.y,-16
+
+number.xr,-43
+number.y,-14

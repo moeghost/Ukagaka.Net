@@ -1,0 +1,16 @@
+windowposition.x,45
+windowposition.y,-138
+
+wordwrappoint.x,-85
+wordwrappoint.y,0
+
+arrow0.x,-69
+arrow0.y,8
+arrow1.x,-69
+arrow1.y,-34
+
+onlinemarker.x,-116
+onlinemarker.y,-72
+
+number.xr,-73
+number.y,-26

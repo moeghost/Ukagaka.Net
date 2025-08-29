@@ -1,0 +1,255 @@
+﻿Onprevision
+{
+"\0\s[40]橘花对数理也小有研究呢，\w9\w9要测试什么呢\n\n/
+\q[◇手机号码测试,Onmbprevision]\n/
+\q[◇电话号码测试,Ontelprevision]\n/
+\q[◇身份证号码测试,OnIDprevision]\n/
+
+\n\n\q[◇返回上一层,OnOpenMenu,1]\n/
+\q[◇终了,OnprevisionEnd]\e"
+
+}
+
+
+Onmbprevision
+
+{
+
+"请输入11位手机号码\![open,inputbox,Onmbcalculate,%(_mn)]\e"
+
+}
+
+Onmbcalculate
+{
+
+_mn = reference0;
+_w = STRLEN(_mn);
+if _w != 11  {Onmbprevision}
+
+else {
+_a = SUBSTR(_mn,_w - 1,1);
+_b = SUBSTR(_mn,_w - 2,1);
+_c = SUBSTR(_mn,_w - 3,1);
+_d = SUBSTR(_mn,_w - 4,1);
+
+
+if _a == 0  {tab[0] = 0;}
+elseif _a == 1 {tab[0] = 1;} 
+elseif _a == 2 {tab[0] = 2;}
+elseif _a == 3 {tab[0] = 3;}
+elseif _a == 4 {tab[0] = 4;}
+elseif _a == 5 {tab[0] = 5;}
+elseif _a == 6 {tab[0] = 6;}
+elseif _a == 7 {tab[0] = 7;}
+elseif _a == 8 {tab[0] = 8;}
+elseif _a == 9 {tab[0] = 9;}
+
+if _b == 0  {tab[1] = 40;}
+elseif _b == 1 {tab[1] = 50;} 
+elseif _b == 2 {tab[1] = 60;}
+elseif _b == 3 {tab[1] = 70;}
+elseif _b == 4 {tab[1] = 0;}
+elseif _b == 5 {tab[1] = 10;}
+elseif _b == 6 {tab[1] = 20;}
+elseif _b == 7 {tab[1] = 30;}
+elseif _b == 8 {tab[1] = 40;}
+elseif _b == 9 {tab[1] = 50;}
+
+if _c % 4 == 0 {tab[2] = 0;}
+elseif _c % 4 == 1 {tab[2] = 20;}
+elseif _c % 4 == 2 {tab[2] = 40;}
+elseif _c % 4 == 3 {tab[2] = 60;}
+
+if _d % 2 == 0 {tab[3] = 40;}
+elseif _d % 2 == 1 {tab[3] = 0;}
+
+
+summb = (tab[0] + tab[1] + tab[2] + tab[3]) % 80;
+
+_a = "手机号码演示命运：";
+_b = "数：" + summb;
+_c = "您的手机号码：" + _mn;
+Onresult(_a,_b,_c);
+
+}
+
+}
+
+
+
+
+
+Ontelprevision
+
+{
+
+"请输入电话号码\![open,inputbox,Ontelcalculate,%(_tn)]\e"
+
+
+}
+
+
+
+Ontelcalculate
+{
+_tn = reference0;
+_w = STRLEN(_tn);
+_a = SUBSTR(_tn,_w - 1,1);
+_b = SUBSTR(_tn,_w - 2,1);
+_c = SUBSTR(_tn,_w - 3,1);
+_d = SUBSTR(_tn,_w - 4,1);
+
+
+if _a == 0  {tab[0] = 0;}
+elseif _a == 1 {tab[0] = 1;} 
+elseif _a == 2 {tab[0] = 2;}
+elseif _a == 3 {tab[0] = 3;}
+elseif _a == 4 {tab[0] = 4;}
+elseif _a == 5 {tab[0] = 5;}
+elseif _a == 6 {tab[0] = 6;}
+elseif _a == 7 {tab[0] = 7;}
+elseif _a == 8 {tab[0] = 8;}
+elseif _a == 9 {tab[0] = 9;}
+
+if _b == 0  {tab[1] = 40;}
+elseif _b == 1 {tab[1] = 50;} 
+elseif _b == 2 {tab[1] = 60;}
+elseif _b == 3 {tab[1] = 70;}
+elseif _b == 4 {tab[1] = 0;}
+elseif _b == 5 {tab[1] = 10;}
+elseif _b == 6 {tab[1] = 20;}
+elseif _b == 7 {tab[1] = 30;}
+elseif _b == 8 {tab[1] = 40;}
+elseif _b == 9 {tab[1] = 50;}
+
+if _c % 4 == 0 {tab[2] = 0;}
+elseif _c % 4 == 1 {tab[2] = 20;}
+elseif _c % 4 == 2 {tab[2] = 40;}
+elseif _c % 4 == 3 {tab[2] = 60;}
+
+if _d % 2 == 0 {tab[3] = 40;}
+elseif _d % 2 == 1 {tab[3] = 0;}
+
+if tab[0] + tab[1] + tab[2] + tab[3] == 80 {sumtel = 80}
+else
+{
+sumtel = (tab[0] + tab[1] + tab[2] + tab[3]) % 80;
+}
+_a = "电话号码演示命运：";
+_b = "数：" + sumtel;
+_c = "您的电话号码：：" + _tn;
+Onresult(_a,_b,_c);
+
+}
+
+OnIDprevision
+{
+
+
+
+"请输入18位身份证号\![open,inputbox,OnIDcalculate,%(_IDn)]\e"
+
+
+
+}
+
+
+OnIDcalculate
+{
+
+_IDn = reference0;
+_w = STRLEN(_IDn);
+if _w != 18  {OnIDprevision}
+
+   else
+    {
+        
+             sumID_ = 0;
+                 for _i = 0;_i <= _w -1;_i++ 
+                        {
+                           _a[_i] = SUBSTR(_IDn,_i,1);
+
+                              for _j = 0;_j <= 9;_j++
+                                        {
+                                    if _a[_i] == _j {_a[_i] = _j;}
+
+                                        }
+
+                                       sumID_ += _a[_i];
+                               
+                                     
+                        }
+       
+
+             _w = STRLEN(sumID_);
+                while _w != 1
+                    {
+                      sumID = 0;
+                 for _i = 0;_i <= _w -1;_i++ 
+                        {
+                           _a[_i] = SUBSTR(sumID_,_i,1);
+                              for _j = 0;_j <= 9;_j++
+                                        {
+                                    if _a[_i] == _j {_a[_i] = _j;}
+
+                                        }
+                                       
+                                       sumID += _a[_i];
+                                       
+                        }
+                      sumID_ = sumID;
+                     _w = STRLEN(sumID_);
+                   } 
+
+_a = "身份证号码测命运：";
+_b = "数字：" + sumID;
+_c = "号码：" + _IDn;
+Onresult(_a,_b,_c);
+   }
+
+}
+
+
+Onresult
+{
+
+_a = _argv[0];
+_b = _argv[1];
+_c = _argv[2];
+_str =_b;
+_next = "◇";
+_file = "mydata\prevision.txt";
+_buff = "";
+_txt = "\b[2]\![set,choicetimeout,0]";
+
+
+if FOPEN(_file, "r") {
+		_buff = FREAD(_file);
+		while _buff != -1 && _a !_in_ _buff {
+			_buff = FREAD(_file);
+                }
+                while _buff != -1 && _str !_in_ _buff {
+			_buff = FREAD(_file);
+		}
+		if _str _in_ _buff {
+			_txt += _a + "\n\n";
+                        _txt += _c + "\n";
+                        _txt += _str + "\n";
+                  _buff = FREAD(_file);  while _buff != -1 && _next !_in_ _buff {_txt += _buff + "\n";_buff = FREAD(_file);}
+
+			
+		}
+	}
+
+     
+	_txt += "\n\n\n\q[◇返回,Onprevision]\n\q[◇终了,OnprevisionEnd]\e";
+	_txt;
+	FCLOSE(_file);
+}
+
+OnprevisionEnd
+{
+        "\0\s[0]好的。\w9\w9\e"
+        "\0\s[26]好的，需要时再叫我\w9\w9\e" 
+	"\0\s[0]这样有帮上你的忙吗？\w9\w9\e" 
+}

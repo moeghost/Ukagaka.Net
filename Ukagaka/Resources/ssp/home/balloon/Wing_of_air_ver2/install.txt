@@ -1,0 +1,7 @@
+type,balloon
+name,Wing of air
+directory,Wing_of_Air
+refresh,1
+script,\h\s[0]「%lastobjectname」\n\nのインストールが無事に終了しました。\e
+
+

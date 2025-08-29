@@ -1,0 +1,4 @@
+charset,ANSI
+type,balloon
+name,¿ÝÒ¶
+directory,DeadLeaf

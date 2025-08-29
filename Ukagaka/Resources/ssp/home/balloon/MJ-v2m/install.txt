@@ -1,0 +1,5 @@
+charset,Shift_JIS
+type,balloon
+name,green mat
+directory,MJ
+refresh,1

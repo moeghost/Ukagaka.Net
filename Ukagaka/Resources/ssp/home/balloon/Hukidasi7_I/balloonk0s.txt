@@ -1,0 +1,12 @@
+windowposition.x,center
+windowposition.y,0
+
+validrect.left,0
+validrect.top,0
+validrect.right,0
+validrect.bottom,-220
+
+arrow0.x,284
+arrow0.y,12
+arrow1.x,284
+arrow1.y,-234

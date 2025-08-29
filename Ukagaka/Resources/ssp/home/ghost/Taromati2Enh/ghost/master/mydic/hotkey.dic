@@ -1,0 +1,52 @@
+OnKeyPress
+{
+	if reference0 == "f1" {
+		//---- 開啟readme.txt
+		"\![open,readme]"
+	}
+	elseif reference0 == "f2" {
+		//---- 程式測試
+		TestFunction
+	}
+	elseif reference0 == "f4" {
+		//---- 程式測試
+		"\![open,inputbox,OnGetVarValue]"
+	}
+	elseif reference0 == "f5" {
+		//---- 人格重新載入
+		"\0重新讀取SHORI……\![reload,shiori]"
+	}
+	elseif reference0 == "f12" {
+		//截屏功能。感謝Pygmalionさん與Royさん！
+		_result=FUNCTIONEX("saori\screencatch.dll");
+	}
+	elseif reference0 == "c" {
+		//---- 開始溝通
+		"\![open,communicatebox]"
+	}
+	elseif (reference0 == "p" || reference0 == "s") && playingmusic {
+		MusicHotKey(reference0);
+	}
+	elseif playingbox {
+		PlayBox;
+	}
+	else {
+		"\0\s[0]你按了%(reference0)。編碼是%(reference1)。目前尚未被設定為熱鍵。"
+	}
+}
+
+OnGetVarValue
+{
+	_var = reference0[0,'='];
+	_var = _var[0,'['];
+	_func = reference0[0,'('];
+	if ISVAR(_var) == 0 && ISFUNC(_func) == 0 {
+		"没有这个变量或函数……";
+	}
+	else {
+		"表达式『%(reference0)』的执行结果为：\n"
+		--
+		TOSTR(EVAL(reference0));
+	}
+}
+

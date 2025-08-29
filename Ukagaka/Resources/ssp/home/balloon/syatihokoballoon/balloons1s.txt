@@ -1,0 +1,19 @@
+origin.x,23
+origin.y,14
+
+onlinemarker.x,24
+onlinemarker.y,147
+
+sstpmarker.x,24
+sstpmarker.y,147
+
+sstpmessage.x,39
+sstpmessage.y,148
+
+sstpmessage.font.height,10
+sstpmessage.font.name,‚l‚r ƒSƒVƒbƒN
+
+arrow0.x,301
+arrow0.y,10
+arrow1.x,301
+arrow1.y,143

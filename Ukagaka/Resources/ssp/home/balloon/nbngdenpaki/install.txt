@@ -1,0 +1,4 @@
+Charset,UTF-8
+type,balloon
+name,NOBUNAGA電波系
+directory,nbngdenpaki

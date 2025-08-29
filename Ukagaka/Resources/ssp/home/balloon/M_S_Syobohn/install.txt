@@ -1,0 +1,7 @@
+type,balloon
+name,M_S_Syobohn
+directory,M_S_Syobohn
+refresh,1
+script,\h\s[0]「%lastobjectname」\n\nのインストールが無事に終了しました。\e
+
+

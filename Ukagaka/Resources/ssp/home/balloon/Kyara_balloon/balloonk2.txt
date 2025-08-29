@@ -1,0 +1,9 @@
+validrect.top,39
+validrect.left,58
+validrect.right,-58
+validrect.bottom,-45
+
+arrow0.x,18
+arrow0.y,137
+arrow1.x,-25
+arrow1.y,137

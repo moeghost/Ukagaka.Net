@@ -1,0 +1,15 @@
+windowposition.x,0
+windowposition.y,0
+
+wordwrappoint.x,-100
+wordwrappoint.y,0
+
+validrect.left,50
+validrect.top,31
+validrect.right,-100
+validrect.bottom,-14
+
+arrow0.x,-100
+arrow0.y,60
+arrow1.x,-100
+arrow1.y,-68

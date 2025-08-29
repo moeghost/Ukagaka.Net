@@ -1,0 +1,6 @@
+type,balloon
+name,専用バルーン「スケッチ」
+directory,sketch
+refresh,1
+
+

@@ -1,0 +1,7 @@
+sstpmarker.y,88
+sstpmessage.y,87
+number.y,87
+validrect.top,15
+validrect.bottom,88
+arrow0.y,89
+arrow1.y,89

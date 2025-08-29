@@ -1,0 +1,10 @@
+windowposition.x,0
+windowposition.y,0
+origin.y,10
+
+
+
+arrow0.x,-17
+arrow0.y,7
+arrow1.x,-17
+arrow1.y,-23

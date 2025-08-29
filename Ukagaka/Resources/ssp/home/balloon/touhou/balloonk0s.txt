@@ -1,0 +1,6 @@
+windowposition.x,-8
+windowposition.y,0
+
+font.color.r,255
+font.color.g,192
+font.color.b,192

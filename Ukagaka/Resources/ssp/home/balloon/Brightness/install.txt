@@ -1,0 +1,8 @@
+type,balloon
+name,Brightness
+accept,Brightness
+directory,Brightness
+refresh,1
+script,\h\s[0]「%lastobjectname」\n\nのインストールが無事に終了しました。\e
+
+

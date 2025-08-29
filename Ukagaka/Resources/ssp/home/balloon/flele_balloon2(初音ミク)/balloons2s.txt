@@ -1,0 +1,8 @@
+windowposition.y,25
+origin.x,14
+//origin.y,24
+//validrect.top,24
+wordwrappoint.x,-25
+validrect.bottom,-13
+arrow0.y,-16
+arrow1.y,-16

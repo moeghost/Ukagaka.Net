@@ -1,0 +1,7 @@
+﻿charset,UTF-8
+type,ghost
+name,橘花2简体中文增强版-2009.10.27
+directory,Taromati2Enh
+
+balloon.directory,Aero_Glass
+balloon.source.directory,balloon

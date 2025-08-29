@@ -1,0 +1,7 @@
+//Æðµã
+origin.x,40
+origin.y,0
+
+//ÎÄ×Ö·¶Î§
+wordwrappoint.x,0
+wordwrappoint.y,0

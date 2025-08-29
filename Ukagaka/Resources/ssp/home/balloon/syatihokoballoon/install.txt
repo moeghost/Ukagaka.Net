@@ -1,0 +1,6 @@
+charset,Shift_JIS
+type,balloon
+accept,コノハ
+name,シャチホコバルーン
+directory,syatihokoballoon
+refresh,1

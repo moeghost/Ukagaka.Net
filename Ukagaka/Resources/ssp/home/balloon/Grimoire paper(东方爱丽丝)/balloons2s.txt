@@ -1,0 +1,15 @@
+windowposition.x,0
+windowposition.y,0
+
+arrow0.x,306
+arrow0.y,26
+arrow1.x,306
+arrow1.y,-40
+
+origin.x,20
+origin.y,24
+
+validrect.left,0
+validrect.top,16
+validrect.right,0
+validrect.bottom,-26

@@ -1,0 +1,166 @@
+﻿
+OnKikkaOnline
+{
+	KikkaOnlineInter;
+}
+
+OnGetOnlineUser
+{
+	KikkaOnlineUser
+
+
+}
+
+
+
+KikkaOnlineInter
+{
+	if ISVAR("kikkaid")==0
+		GetKikkaId("%(username)");
+	elseif kikkaonlinemm<=GETTICKCOUNT-60000*3
+	{
+		KikkaOnlineState(kikkaid)
+	}
+}
+KikkaOnlineState
+{
+_name=_argv[0];
+_url="http://sacredsky.us/online/%(_name)/"
+"\C\0\![excute,http-get,%(_url),--param-charset=UTF-8,--file=kikkaonline,--timeout=200,--async=kikkaonline]";
+}
+
+
+GetKikkaId
+{
+_name=_argv[0];
+_url="http://sacredsky.us/getid/%(_name)/"
+"\C\0\![excute,http-get,%(_url),--param-charset=UTF-8,--file=kikkaid,--timeout=200,--async=kikkaid]";
+
+}
+
+
+KikkaOnlineUser
+{
+_url="http://sacredsky.us/getonlineuser/"
+"\C\0\![excute,http-get,%(_url),--param-charset=UTF-8,--file=kikkaonlineuser,--timeout=200,--async=kikkaonlineuser]";
+
+
+
+}
+
+OnKikkaIdFound
+{
+	kikkaid=OnKikkaIdLoad;
+}
+
+OnKikkaOnlineFound
+{
+	kikkaonline=OnKikkaOnlineLoad;
+	kikkaonlinemm=GETTICKCOUNT;
+}
+
+OnKikkaOnlineUserFound
+{
+	_onlineuserlist=OnKikkaOnlineUserLoad;
+	_txt="\![quicksession,true]\0\b[2]\![set,choicetimeout,0]"
+	_buff=_onlineuserlist;
+	_buff=REPLACE(_buff,'"','');
+	SETDELIM(_buff,'*');
+	_n=ARRAYSIZE(_buff)-2
+	_txt+="在线列表\n"
+	_txt+="在线用户KID  \_l[80]在线用户呢称     \_l[175]最近登录\n[150]"
+	foreach _buff;_t
+	{
+		_user_id=_t[0]
+		_name=_t[1]
+		_name=STRDECODE(_name,1)
+		_lastlogin=_t[2]
+		_txt+="%(_user_id)  \_l[60]%(_name)      \_l[175]%(_lastlogin)\n"
+	}
+	_txt+="\x"
+
+	_txt;
+
+}
+
+OnKikkaIdLoad
+{
+	FCHARSET(1);
+	_file="var/kikkaid"
+	FCHARSET(1); 
+	_txt=""
+	if FOPEN(_file,'r') 
+	{
+   
+		while 	(_buff = FREAD(_file))!= -1 
+		{
+			_txt+=_buff
+		}
+	}
+	FCLOSE(_file)
+	_txt;
+	FCHARSET(1); 
+}
+
+OnKikkaOnlineLoad;
+{
+	FCHARSET(1);
+	_file="var/kikkaonline"
+	FCHARSET(1); 
+	_txt=""
+	if FOPEN(_file,'r') 
+	{
+   
+		while 	(_buff = FREAD(_file))!= -1 
+		{
+			_txt+=_buff
+		}
+	}
+	FCLOSE(_file)
+	_txt;
+	FCHARSET(1); 
+}
+
+OnKikkaOnlineUserLoad
+{
+	FCHARSET(1);
+	_file="var/kikkaonlineuser"
+	FCHARSET(1); 
+	_txt="";
+	if FOPEN(_file,'r') 
+	{
+		while 	(_buff = FREAD(_file))!= -1 
+		{
+	
+				_t=SPLIT(_buff,': {')
+				_n=ARRAYSIZE(_t);
+				for _b=1;_b<_n;_b++
+				{
+
+					_temp=TextBetween(_buff,'{','}',_b);
+					_m=ARRAYSIZE(_temp)
+					for _a=0;_a<_m;_a++
+					{	
+						_t=SPLIT(_temp[_a],', "')
+						_l=ARRAYSIZE(_t);
+						for _j=0;_j<_l;_j++
+						{
+							_txt+=_t[_j][1,':']+",";
+						}
+					}
+					_txt+='*';
+				}
+		}
+		
+	}
+	FCLOSE(_file);
+	FCHARSET(1);
+	_txt;
+}
+
+OnClearOnlineVar
+{
+	_t=FDEL("var/kikkaonline");
+ 	ERASEVAR("kikkaonline");
+ 	ERASEVAR("kikkaonlinemm");
+}

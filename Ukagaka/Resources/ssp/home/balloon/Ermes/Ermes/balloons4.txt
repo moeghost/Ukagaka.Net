@@ -1,0 +1,4 @@
+validrect.top,59
+validrect.left,43
+validrect.right,-15
+validrect.bottom,-15

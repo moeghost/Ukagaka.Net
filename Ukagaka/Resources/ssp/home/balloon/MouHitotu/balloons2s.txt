@@ -1,0 +1,8 @@
+windowposition.x,-10
+windowposition.y,0
+
+origin.x,54
+origin.y,14
+
+wordwrappoint.x,-65
+wordwrappoint.y,0

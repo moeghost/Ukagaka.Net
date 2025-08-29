@@ -1,0 +1,7 @@
+type,balloon
+name,Yui Siro 
+directory,Yui_Siro
+refresh,1
+script,\h\s[0]「%lastobjectname」\n\nのインストールが無事に終了しました。\e
+
+

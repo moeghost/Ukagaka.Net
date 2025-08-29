@@ -1,0 +1,8 @@
+type,balloon
+name,for Mukuro
+accept,骸
+directory,Mukuro_balloon
+refresh,1
+script,\h\s[0]「%lastobjectname」啊...\w9\n\s[5]是骸的专属对话框呢...\w9\w9\n谢谢。\e
+
+

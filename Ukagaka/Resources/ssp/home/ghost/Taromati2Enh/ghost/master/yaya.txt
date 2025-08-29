@@ -1,0 +1,44 @@
+﻿///////// 文　ゴーストテンプレート
+///////// aya.txt (設定ファイル)
+///////// written by umeici.
+
+charset, UTF-8
+charset.extension, default
+
+//---- 読み込む辞書 ---------------------------------------------------------------------
+dic, yaya_config.dic		// 文 ver.3 形式辞書設定辞書
+dic, yaya_shiori3.dic		// 文 ver.3 形式辞書制御辞書
+dic, yaya_compatible.dic	// YAYAに移行用
+dic, aya_sysex.dic		// aya_shiori3.dicから分離した
+dic, aya_string.dic		// 文字列リソース辞書
+
+
+dic, mydic\aya_aitalk.dic		// ランダムトーク辞書
+dic, mydic\aya_bootend.dic		// 起動/終了/切り替えトーク辞書
+dic, mydic\aya_mouse.dic		// マウス入力関連辞書
+dic, mydic\aya_etc.dic		// 種々のイベント辞書
+dic, mydic\aya_aitalk_t.dic
+
+dic, mydic\menu.dic
+dic, mydic\hotkey.dic
+dic, mydic\playwithlrc.dic
+dic, mydic\games.dic
+dic, mydic\flower.dic
+dic, mydic\classtable.dic
+dic, mydic\boxgame.dic
+dic, mydic\dict.dic
+dic, mydic\poem.dic
+dic, mydic\happyquest.dic
+dic, mydic\lunar.dic
+dic, mydic\clothes.dic
+dic, mydic\puzzle.dic
+dic, mydic\rpg.dic
+dic, mydic\clock.dic
+dic, mydic\internet.dic
+dic, mydic\Tarro.dic
+
+//dic, mydic\test.dic
+
+//---- 実行ログ -------------------------------------------------------------------------
+//log, ayame.log			// 実行ログをayame.logに記録します。開発時には記録しておいたほうが良いです。
+//iolog, off

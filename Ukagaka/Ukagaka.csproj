@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <OutputType>exe</OutputType>
+    <LangVersion>latest</LangVersion>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Classes\live2D\Form1.cs" />
+    <None Include="Classes\live2D\Live2D.cs" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.14.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="ShioriSharp" Version="1.0.1" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\SCClasses\Foundation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Resources\Localizable\English\ErrorDic.strings">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Localizable\English\MainStrDic.strings">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Localizable\zh-cn\ErrorDic.strings">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Localizable\zh-cn\MainStrDic.strings">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+	<Target Name="CopyCustomFolder" AfterTargets="Build">
+		<ItemGroup>
+			<CustomFiles Include="Resources\ssp\**" />
+		</ItemGroup>
+		<Message Importance="high" Text="复制文件数: @(CustomFiles-&gt;Count())" />
+
+		<Copy SourceFiles="@(CustomFiles)" DestinationFiles="@(CustomFiles->'$(OutputPath)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+	</Target>
+
+	<Target Name="CopyShioriDll" AfterTargets="Build">
+		<Copy SourceFiles="$(SolutionDir)shiori\Yaya.NET\bin\$(Configuration)\net9.0\win-x86\Yaya.NET.dll" DestinationFolder="$(ProjectDir)Resources\ssp\home\ghost\Taromati2Enh\ghost\master\" />
+	</Target>
+	
+	
+</Project>

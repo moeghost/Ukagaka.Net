@@ -1,0 +1,6 @@
+origin.x,16
+origin.y,14
+
+windowposition.x,0
+windowposition.y,0
+

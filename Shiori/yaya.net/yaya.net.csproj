@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+  
+	 <DllExportPlatformTarget>X86</DllExportPlatformTarget> <!-- 或x64 -->
+     <DllExportOrdinalsBase>1</DllExportOrdinalsBase>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="UnmanagedExports" Version="1.2.7" />
+  </ItemGroup>
+  
+</Project>

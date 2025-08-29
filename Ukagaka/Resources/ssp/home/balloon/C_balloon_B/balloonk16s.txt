@@ -1,0 +1,12 @@
+
+validrect.left,0
+validrect.top,1
+validrect.right,0
+validrect.bottom,0
+
+origin.x,14
+origin.y,14
+
+wordwrappoint.x,0
+wordwrappoint.y,0
+

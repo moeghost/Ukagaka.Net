@@ -1,0 +1,7 @@
+windowposition.x,0
+windowposition.y,0
+
+validrect.left,0
+validrect.top,1
+validrect.right,0
+validrect.bottom,-12

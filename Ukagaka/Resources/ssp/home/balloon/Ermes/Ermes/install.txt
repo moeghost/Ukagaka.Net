@@ -1,0 +1,4 @@
+charset,Shift_JIS
+type,balloon
+name,The Ragnaro
+directory,ro

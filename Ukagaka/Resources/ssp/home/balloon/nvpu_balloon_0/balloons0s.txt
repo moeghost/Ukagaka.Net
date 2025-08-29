@@ -1,0 +1,14 @@
+origin.y,70
+origin.x,24
+font.height,14   
+validrect.bottom,-90  
+validrect.right,-5
+validrect.left,10
+validrect.top,70
+arrow0.x,169			//169,255,233,269 203,256,230,269
+arrow0.y,250
+arrow1.x,203
+arrow1.y,250
+wordwrappoint.x,-45
+windowposition.x,0
+windowposition.y,0
